@@ -52,7 +52,6 @@ C:\Users\vikram Rangaswamy\source\repos\DeploymentTool\bin\roslyn\VBCSCompiler.e
 C:\Users\vikram Rangaswamy\source\repos\DeploymentTool\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\vikram Rangaswamy\source\repos\DeploymentTool\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\vikram Rangaswamy\source\repos\DeploymentTool\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\vikram Rangaswamy\source\repos\DeploymentTool\obj\Debug\DeploymentTool.csproj.AssemblyReference.cache
 C:\Users\vikram Rangaswamy\source\repos\DeploymentTool\obj\Debug\DeploymentTool.csproj.CoreCompileInputs.cache
 C:\Users\vikram Rangaswamy\source\repos\DeploymentTool\obj\Debug\DeploymentTool.csproj.CopyComplete
 C:\Users\vikram Rangaswamy\source\repos\DeploymentTool\obj\Debug\DeploymentTool.dll

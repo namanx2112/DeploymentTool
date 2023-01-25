@@ -69,6 +69,17 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="Web.config" />
+    <Content Include="WireFrames\css\main.css" />
+    <Content Include="WireFrames\css\socialLinks.css" />
+    <Content Include="WireFrames\images\header-bg.png" />
+    <Content Include="WireFrames\images\offerImages\header-bg.png" />
+    <Content Include="WireFrames\index.htm" />
+    <Content Include="WireFrames\js\jquery-3.1.js" />
+    <Content Include="WireFrames\js\jquery.imgzoom.js" />
+    <Content Include="WireFrames\js\main.js" />
+    <Content Include="WireFrames\login.htm" />
+    <Content Include="WireFrames\reModelStore.htm" />
+    <Content Include="WireFrames\vendorPage.htm" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
