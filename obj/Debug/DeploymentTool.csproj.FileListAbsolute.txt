@@ -122,3 +122,4 @@ E:\DeploymentTool\obj\Debug\DeploymentTool.csproj.CoreCompileInputs.cache
 E:\DeploymentTool\obj\Debug\DeploymentTool.csproj.CopyComplete
 E:\DeploymentTool\obj\Debug\DeploymentTool.dll
 E:\DeploymentTool\obj\Debug\DeploymentTool.pdb
+E:\DeploymentTool\obj\Debug\DeploymentTool.csproj.AssemblyReference.cache

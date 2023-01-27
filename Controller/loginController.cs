@@ -5,35 +5,40 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+
 namespace DeploymentTool.Controller
 {
     public class loginController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<controller>/5
-        public string Get(int id)
-        {
-            return "value";
-        }
+       
 
         // POST api/<controller>
-        public void Post([FromBody] string value)
+        public dynamic Post([FromBody] dynamic input)
         {
+            string procName = "sproc_UserLogin";
+            string tUserName, tPassword;
+            string tName = string.Empty;
+            string tEmail = string.Empty;
+            int nRoleType = -1;
+            int nUserID = -1;
+
+            tUserName = input.UserName;
+            tPassword = input.Password;
+
+
+            DBHelper.login(tUserName, tPassword, out  tName, out  tEmail, out  nRoleType, out  nUserID);
+
+
+            return new {
+                tUserName = tUserName,
+                tName = tName,
+                tEmail = tEmail,
+                nRoleType = nRoleType,
+                nUserID = nUserID
+
+            };
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
+        
     }
 }
