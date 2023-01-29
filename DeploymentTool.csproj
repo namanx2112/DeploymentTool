@@ -386,10 +386,14 @@
     <Compile Include="Auth\JwtManager.cs" />
     <Compile Include="Controller\TokenController.cs" />
     <Compile Include="Controller\loginController.cs" />
+<<<<<<< HEAD
     <Compile Include="Filters\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="Filters\AuthenticationFailureResult.cs" />
     <Compile Include="Filters\JwtAuthenticationAttribute.cs" />
     <Compile Include="Filters\HttpAuthenticationChallengeContextExtensions.cs" />
+=======
+    <Compile Include="Controller\StoreController.cs" />
+>>>>>>> 8b818f4f79eaae5849808e7c67e0a65cf587b7bf
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
