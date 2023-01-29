@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeploymentTool.Jwt.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,7 +11,12 @@ namespace DeploymentTool.Controller
 {
     public class loginController : ApiController
     {
-       
+
+        [JwtAuthentication]
+        public string Get()
+        {
+            return "value";
+        }
 
         // POST api/<controller>
         public dynamic Post([FromBody] dynamic input)
