@@ -371,6 +371,7 @@
     <Content Include="WireFrames\bootstrap-3.3.7\package.js" />
     <Content Include="WireFrames\css\main.css" />
     <Content Include="WireFrames\css\socialLinks.css" />
+    <Content Include="WireFrames\Home.htm" />
     <Content Include="WireFrames\images\header-bg.png" />
     <Content Include="WireFrames\images\offerImages\header-bg.png" />
     <Content Include="WireFrames\index.htm" />
@@ -378,7 +379,9 @@
     <Content Include="WireFrames\js\jquery.imgzoom.js" />
     <Content Include="WireFrames\js\main.js" />
     <Content Include="WireFrames\login.htm" />
+    <Content Include="WireFrames\main.css" />
     <Content Include="WireFrames\reModelStore.htm" />
+    <Content Include="WireFrames\css\tabMenu.css" />
     <Content Include="WireFrames\vendorPage.htm" />
   </ItemGroup>
   <ItemGroup>
