@@ -21,6 +21,8 @@ namespace DeploymentTool.AppStart
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
                 );
+            //Web API Exception Handler
+            config.Filters.Add(new globalExceptionHandler());
         }
     }
 }

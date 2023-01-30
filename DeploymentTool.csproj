@@ -382,6 +382,7 @@
     <Content Include="WireFrames\vendorPage.htm" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppStart\globalExceptionHandler.cs" />
     <Compile Include="AppStart\RouteConfig.cs" />
     <Compile Include="Auth\JwtManager.cs" />
     <Compile Include="Controller\TokenController.cs" />
