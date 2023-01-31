@@ -907,7 +907,6 @@
     <Compile Include="Auth\JwtManager.cs" />
     <Compile Include="Controller\StoreScreenConfigController.cs" />
     <Compile Include="Controller\TokenController.cs" />
-    <Compile Include="Controller\loginController.cs" />
     <Compile Include="Filters\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="Filters\AuthenticationFailureResult.cs" />
     <Compile Include="Filters\JwtAuthenticationAttribute.cs" />

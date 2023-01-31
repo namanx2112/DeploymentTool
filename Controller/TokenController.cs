@@ -1,4 +1,5 @@
 ﻿using DeploymentTool.Auth;
+using DeploymentTool.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,20 +15,27 @@ namespace DeploymentTool.Controller
 
         [HttpPost]
         [AllowAnonymous]
-        public AuthResponse Get(UserForAuthentication request)
+        public HttpResponseMessage Get(UserForAuthentication request)
         {
-            if (CheckUser(request.UserName, request.Password))
-            {
-                return JwtManager.GenerateToken(request.UserName);
-            }
+            var user = CheckUser(request.UserName, request.Password);
 
-            throw new HttpResponseException(HttpStatusCode.Unauthorized);
+            if (user.nUserID != -1)
+            {
+
+                user.auth = JwtManager.GenerateToken(request.UserName);
+                return Request.CreateResponse(HttpStatusCode.OK, user);
+            }
+            return Request.CreateResponse(HttpStatusCode.Unauthorized);
         }
 
-        public bool CheckUser(string username, string password)
+        public User CheckUser(string username, string password)
         {
-            // should check in the database
-            return true;
+            User objUser = new User();
+            objUser.userName = username;
+            objUser.password = password;
+            DBHelper.login(ref objUser);
+            return objUser;           
+
         }
 
     }
