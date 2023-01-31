@@ -1,4 +1,5 @@
 ﻿using DeploymentTool.Jwt.Filters;
+using DeploymentTool.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace DeploymentTool.Controller
     public class loginController : ApiController
     {
 
-        [JwtAuthentication]
+       // [JwtAuthentication]
         public string Get()
         {
             return "value";
@@ -21,28 +22,18 @@ namespace DeploymentTool.Controller
         // POST api/<controller>
         public dynamic Post([FromBody] dynamic input)
         {
-            string procName = "sproc_UserLogin";
-            string tUserName, tPassword;
-            string tName = string.Empty;
-            string tEmail = string.Empty;
-            int nRoleType = -1;
-            int nUserID = -1;
+            
 
-            tUserName = input.UserName;
-            tPassword = input.Password;
+            User objUser = new User();
+            objUser.userName = input.UserName;
+            objUser.password  = input.Password;
+            
 
 
-            DBHelper.login(tUserName, tPassword, out  tName, out  tEmail, out  nRoleType, out  nUserID);
+            DBHelper.login(ref objUser);
 
 
-            return new {
-                tUserName = tUserName,
-                tName = tName,
-                tEmail = tEmail,
-                nRoleType = nRoleType,
-                nUserID = nUserID
-
-            };
+            return objUser;
         }
 
         

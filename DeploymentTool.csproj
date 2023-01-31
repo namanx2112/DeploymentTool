@@ -905,6 +905,7 @@
     <Compile Include="AppStart\globalExceptionHandler.cs" />
     <Compile Include="AppStart\RouteConfig.cs" />
     <Compile Include="Auth\JwtManager.cs" />
+    <Compile Include="Controller\StoreScreenConfigController.cs" />
     <Compile Include="Controller\TokenController.cs" />
     <Compile Include="Controller\loginController.cs" />
     <Compile Include="Filters\AddChallengeOnUnauthorizedResult.cs" />
@@ -916,6 +917,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DBHelper.cs" />
+    <Compile Include="Model\SearchField.cs" />
+    <Compile Include="Model\StoreFieldConfig.cs" />
+    <Compile Include="Model\StoreScreenConfiguration.cs" />
+    <Compile Include="Model\TableFields.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1332,9 +1338,7 @@
     <Content Include="WireFrames\bootstrap-3.3.7\README.md" />
     <Content Include="WireFrames\bootstrap-3.3.7\_config.yml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="UILayer\productUI\src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="UILayer\productUI\src\app\app.component.spec.ts" />

@@ -7,6 +7,8 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
+using Newtonsoft.Json;
+using DeploymentTool.Model;
 
 namespace DeploymentTool
 {
@@ -25,194 +27,30 @@ namespace DeploymentTool
             }
         }
 
-        public static DataTable ExecuteProcedure(string PROC_NAME, params object[] parameters)
-        {
-            try
-            {
-                if (parameters.Length % 2 != 0)
-                    throw new ArgumentException("Wrong number of parameters sent to procedure. Expected an even number.");
-                DataTable a = new DataTable();
-                List<SqlParameter> filters = new List<SqlParameter>();
 
-                string query = "EXEC " + PROC_NAME;
 
-                bool first = true;
-                for (int i = 0; i < parameters.Length; i += 2)
-                {
-                    filters.Add(new SqlParameter(parameters[i] as string, parameters[i + 1]));
-                    query += (first ? " " : ", ") + ((string)parameters[i]);
-                    first = false;
-                }
 
-                a = Query(query, filters);
-                return a;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
-        public static DataTable ExecuteQuery(string query, params object[] parameters)
-        {
-            try
-            {
-                if (parameters.Length % 2 != 0)
-                    throw new ArgumentException("Wrong number of parameters sent to procedure. Expected an even number.");
-                DataTable a = new DataTable();
-                List<SqlParameter> filters = new List<SqlParameter>();
 
-                for (int i = 0; i < parameters.Length; i += 2)
-                    filters.Add(new SqlParameter(parameters[i] as string, parameters[i + 1]));
 
-                a = Query(query, filters);
-                return a;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
-        public static int ExecuteNonQuery(string query, params object[] parameters)
-        {
-            try
-            {
-                if (parameters.Length % 2 != 0)
-                    throw new ArgumentException("Wrong number of parameters sent to procedure. Expected an even number.");
-                List<SqlParameter> filters = new List<SqlParameter>();
-
-                for (int i = 0; i < parameters.Length; i += 2)
-                    filters.Add(new SqlParameter(parameters[i] as string, parameters[i + 1]));
-                return NonQuery(query, filters);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public static object ExecuteScalar(string query, params object[] parameters)
-        {
-            try
-            {
-                if (parameters.Length % 2 != 0)
-                    throw new ArgumentException("Wrong number of parameters sent to query. Expected an even number.");
-                List<SqlParameter> filters = new List<SqlParameter>();
-
-                for (int i = 0; i < parameters.Length; i += 2)
-                    filters.Add(new SqlParameter(parameters[i] as string, parameters[i + 1]));
-                return Scalar(query, filters);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         #region Private Methods
 
-        private static DataTable Query(String consulta, IList<SqlParameter> parametros)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                SqlConnection connection = new SqlConnection(defaultConnectionString);
-                SqlCommand command = new SqlCommand();
-                SqlDataAdapter da;
-                try
-                {
-                    command.Connection = connection;
-                    command.CommandText = consulta;
-                    if (parametros != null)
-                    {
-                        command.Parameters.AddRange(parametros.ToArray());
-                    }
-                    da = new SqlDataAdapter(command);
-                    da.Fill(dt);
-                }
-                finally
-                {
-                    if (connection != null)
-                        connection.Close();
-                }
-                return dt;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
 
-        }
 
-        private static int NonQuery(string query, IList<SqlParameter> parametros)
-        {
-            try
-            {
-                DataSet dt = new DataSet();
-                SqlConnection connection = new SqlConnection(defaultConnectionString);
-                SqlCommand command = new SqlCommand();
 
-                try
-                {
-                    connection.Open();
-                    command.Connection = connection;
-                    command.CommandText = query;
-                    command.Parameters.AddRange(parametros.ToArray());
-                    return command.ExecuteNonQuery();
 
-                }
-                finally
-                {
-                    if (connection != null)
-                        connection.Close();
-                }
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
-        private static object Scalar(string query, List<SqlParameter> parametros)
-        {
-            try
-            {
-                DataSet dt = new DataSet();
-                SqlConnection connection = new SqlConnection(defaultConnectionString);
-                SqlCommand command = new SqlCommand();
-
-                try
-                {
-                    connection.Open();
-                    command.Connection = connection;
-                    command.CommandText = query;
-                    command.Parameters.AddRange(parametros.ToArray());
-                    return command.ExecuteScalar();
-
-                }
-                finally
-                {
-                    if (connection != null)
-                        connection.Close();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public static void login(string userName, string password, out string tName, out string tEmail , out int nRoleType, out int nUserID)
+        public static void login(ref User objUser)
         {
             using (SqlConnection con = new SqlConnection(defaultConnectionString))
             {
                 SqlCommand cmd = new SqlCommand("sproc_UserLogin", con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("tUserName", userName);
-                cmd.Parameters.AddWithValue("tPassword ", password);              
+                cmd.Parameters.AddWithValue("tUserName", objUser.userName);
+                cmd.Parameters.AddWithValue("tPassword ", objUser.password);
 
                 SqlParameter outputPara = new SqlParameter();
                 outputPara.ParameterName = "@tName";
@@ -239,13 +77,51 @@ namespace DeploymentTool
                 con.Open();
                 cmd.ExecuteNonQuery();
 
-                tName = outputPara.Value.ToString();  
-                tEmail = outputPara1.Value.ToString();
-                nRoleType = Convert.ToInt32(outputPara2.Value.ToString());
-                nUserID = Convert.ToInt32(outputPara3.Value.ToString());
+                objUser.tName = outputPara.Value.ToString();
+                objUser.tEmail = outputPara1.Value.ToString();
+                objUser.nRoleType = Convert.ToInt32(outputPara2.Value.ToString());
+                objUser.nUserID = Convert.ToInt32(outputPara3.Value.ToString());
             }
 
-}
+        }
+        static dynamic ConvertDataTableToDynamicObject(DataTable dataTable)
+        {
+            var dynamicList = dataTable.AsEnumerable().Select(row =>
+            {
+                var dynamicObject = new System.Dynamic.ExpandoObject();
+                var dictionary = (IDictionary<string, object>)dynamicObject;
+
+                foreach (DataColumn column in dataTable.Columns)
+                {
+                    dictionary[column.ColumnName] = row[column];
+                }
+
+                return dynamicObject;
+            });
+
+            return dynamicList;
+        }
+
+        public static Dictionary<string, object> CallProcedureAndConvertToJson(string procedureName)
+        {
+            using (var connection = new SqlConnection(DefaultConnectionString))
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand(procedureName, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        Dictionary<string, object> dict = dataTable.AsEnumerable().ToDictionary(row => row.Field<string>(0), row => row.Field<object>(1));
+                        return dict;
+                    }
+                }
+            }
+        }
 
         #endregion
     }
