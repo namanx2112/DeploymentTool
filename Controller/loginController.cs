@@ -13,7 +13,7 @@ namespace DeploymentTool.Controller
     public class loginController : ApiController
     {
 
-       // [JwtAuthentication]
+       [JwtAuthentication]
         public string Get()
         {
             return "value";
