@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeploymentTool.Auth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,6 +15,8 @@ namespace DeploymentTool.Model
         public string tName { get; set; }
         public string tEmail { get; set; }
         public int nRoleType { get; set; }
-        
+              
+        public AuthResponse auth { get; set; }
+
     }
 }
