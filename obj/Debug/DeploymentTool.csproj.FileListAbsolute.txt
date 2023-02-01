@@ -340,3 +340,4 @@ E:\DeploymentTool\bin\System.Text.Encodings.Web.xml
 E:\DeploymentTool\bin\System.Text.Json.xml
 E:\DeploymentTool\bin\System.Threading.Tasks.Extensions.xml
 E:\DeploymentTool\bin\System.ValueTuple.xml
+E:\DeploymentTool\obj\Debug\DeploymentTool.csproj.AssemblyReference.cache
