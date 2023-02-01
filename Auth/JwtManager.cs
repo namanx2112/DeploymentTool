@@ -18,7 +18,8 @@ namespace DeploymentTool.Auth
             var symmetricKey = Convert.FromBase64String(Secret);
             var tokenHandler = new JwtSecurityTokenHandler();
             AuthResponse resp = new AuthResponse();
-            var now = DateTime.UtcNow;
+            //var now = DateTime.UtcNow;
+            var now = DateTime.Now;
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]

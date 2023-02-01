@@ -906,6 +906,7 @@
     <Compile Include="AppStart\RouteConfig.cs" />
     <Compile Include="Auth\JwtManager.cs" />
     <Compile Include="Controller\StoreScreenConfigController.cs" />
+    <Compile Include="Controller\TableController.cs" />
     <Compile Include="Controller\TokenController.cs" />
     <Compile Include="Filters\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="Filters\AuthenticationFailureResult.cs" />
@@ -916,6 +917,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DBHelper.cs" />
+    <Compile Include="Model\Params.cs" />
     <Compile Include="Model\SearchField.cs" />
     <Compile Include="Model\StoreFieldConfig.cs" />
     <Compile Include="Model\StoreScreenConfiguration.cs" />

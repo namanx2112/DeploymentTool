@@ -38,6 +38,29 @@ namespace DeploymentTool
         #region Private Methods
 
 
+        public static  DataTable ExecuteStoredProcedure(string storedProcName,List<Parameters> lsParameters)
+        {
+            using (SqlConnection connection = new SqlConnection(defaultConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(storedProcName, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    foreach (var item in lsParameters) {
+                        command.Parameters.AddWithValue("@"+item.parameterName, item.parameterValue);
+                    }
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        DataTable result = new DataTable();
+                        adapter.Fill(result);
+                        return result;
+                    }
+                }
+            }
+        }
+        
+
+
 
 
 
