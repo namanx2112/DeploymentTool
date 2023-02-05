@@ -8,7 +8,13 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Delete all artifacts
-        uses: actions/delete-artifact@v2
-        with:
-          name: '*'
+      - name: Delete old artifacts
+        run: |
+          NUM_DAYS_OLD=7
+          ARTIFACTS_DIR=$GITHUB_WORKSPACE/path/to/your/artifacts
+          CURRENT_DATE=$(date +%s)
+          FILES_TO_DELETE=$(find $ARTIFACTS_DIR -type f -mtime +$(( NUM_DAYS_OLD * 24 * 60 * 60 )))
+          for file in $FILES_TO_DELETE; do
+            echo "Deleting $file"
+            rm "$file"
+          done
