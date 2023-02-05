@@ -1,0 +1,13 @@
+<div class="tabsBody">
+  <div class="header">{{curTab.tab_header}}</div>
+  <div class="SearchPart">
+    <app-controls [curTab]="curTab"></app-controls>
+    <button mat-fab extended color="warn" class="searchButton">
+      <mat-icon>search</mat-icon>
+      Search
+    </button>
+  </div>
+  <div class="tablePart">
+      <app-table [curTab]="curTab"></app-table>
+  </div>
+</div>
