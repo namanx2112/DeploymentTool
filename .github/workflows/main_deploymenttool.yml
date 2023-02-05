@@ -26,7 +26,7 @@ jobs:
         run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
 
       - name: Delete old artifacts
-        run: rm -rf published/*
+        run: rm -r published/*
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
