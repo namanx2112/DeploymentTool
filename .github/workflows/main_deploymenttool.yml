@@ -28,11 +28,8 @@ jobs:
       - name: Publish to folder
         run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
 
-      - name: Delete old artifacts
-        run: |
-          if [ -d "\published" ]; then
-            rm -rf \published
-          fi
+       - name: Delete old artifacts
+        run: rm -rf .github/artifacts/ASP-app || echo "No previous artifacts to delete"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
