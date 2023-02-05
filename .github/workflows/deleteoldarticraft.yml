@@ -1,6 +1,5 @@
 name: Delete Artifacts
 
-
 on:
   workflow_dispatch:
 
@@ -11,11 +10,11 @@ jobs:
     steps:
       - name: Delete old artifacts
         run: |
-          NUM_DAYS_OLD=7
-          ARTIFACTS_DIR=$GITHUB_WORKSPACE/path/to/your/artifacts
-          CURRENT_DATE=$(date +%s)
-          FILES_TO_DELETE=$(find $ARTIFACTS_DIR -type f -mtime +$(( NUM_DAYS_OLD * 24 * 60 * 60 )))
-          for file in $FILES_TO_DELETE; do
-            echo "Deleting $file"
-            rm "$file"
-          done
+          $NUM_DAYS_OLD = 7
+          $ARTIFACTS_DIR = "$env:GITHUB_WORKSPACE\path\to\your\artifacts"
+          $CURRENT_DATE = Get-Date
+          $FILES_TO_DELETE = Get-ChildItem -Path $ARTIFACTS_DIR -File | Where-Object { $_.LastWriteTime -lt $CURRENT_DATE.AddDays(-$NUM_DAYS_OLD) }
+          foreach ($file in $FILES_TO_DELETE) {
+            Write-Output "Deleting $($file.FullName)"
+            Remove-Item -Path $file.FullName -Force
+          }
