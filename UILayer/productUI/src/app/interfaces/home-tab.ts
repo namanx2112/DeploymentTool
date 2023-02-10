@@ -3,6 +3,7 @@ export interface HomeTab {
     tab_header: string,
     tab_unique_name: string,
     tab_type: TabType,
+    search_fields: Fields[],
     fields: Fields[]
 }
 

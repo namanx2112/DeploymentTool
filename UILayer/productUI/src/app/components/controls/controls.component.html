@@ -1,4 +1,4 @@
-<mat-form-field appearance="outline" class="curField" *ngFor="let curControl of curTab.fields; let index = index">
+<mat-form-field appearance="outline" class="curField" *ngFor="let curControl of fields; let index = index">
     <mat-label [attr.for]="curControl.field_name">{{curControl.field_name}}</mat-label>
     <div [ngSwitch]="curControl.field_type">
         <input *ngSwitchCase="0" matInput placeholder="{{curControl.field_placeholder}}" type="text" required>

@@ -16,6 +16,15 @@ export class HomeTabComponent {
           tab_header: "Users search",
           tab_type: TabType.Users,
           tab_unique_name: "",
+          search_fields: [{
+            field_name: "User Name",
+            fieldUniqeName: "ABCD",
+            invalid: false,
+            field_type: FieldType.text,
+            field_placeholder: "Enter USer Name",
+            regex_validation: "",
+            mandatory: false
+          }],
           fields: [
             {
               field_name: "Name",
@@ -95,6 +104,15 @@ export class HomeTabComponent {
           tab_header: "Brands search",
           tab_type: TabType.Brands,
           tab_unique_name: "",
+          search_fields: [{
+            field_name: "Brands Name",
+            fieldUniqeName: "ABCD",
+            invalid: false,
+            field_type: FieldType.text,
+            field_placeholder: "Enter Brands Name",
+            regex_validation: "",
+            mandatory: false
+          }],
           fields: [
             {
               field_name: "Brands Name",
@@ -174,6 +192,7 @@ export class HomeTabComponent {
           tab_header: "Franchises search",
           tab_type: TabType.Franchise,
           tab_unique_name: "",
+          search_fields: [],
           fields: []
         },
         {
@@ -181,6 +200,7 @@ export class HomeTabComponent {
           tab_header: "Stores search",
           tab_type: TabType.Store,
           tab_unique_name: "",
+          search_fields: [],
           fields: []
         },
         {
@@ -188,6 +208,7 @@ export class HomeTabComponent {
           tab_header: "Tech Components search",
           tab_type: TabType.TechComponent,
           tab_unique_name: "",
+          search_fields: [],
           fields: []
         },
         {
@@ -195,6 +216,7 @@ export class HomeTabComponent {
           tab_header: "Vendors search",
           tab_type: TabType.Vendor,
           tab_unique_name: "",
+          search_fields: [],
           fields: []
         },
         {
@@ -202,6 +224,7 @@ export class HomeTabComponent {
           tab_header: "Tech Component Tools search",
           tab_type: TabType.TechComponentTools,
           tab_unique_name: "",
+          search_fields: [],
           fields: []
         },
         {
@@ -209,6 +232,7 @@ export class HomeTabComponent {
           tab_header: "Analytics search",
           tab_type: TabType.Analytics,
           tab_unique_name: "",
+          search_fields: [],
           fields: []
         }
       ]

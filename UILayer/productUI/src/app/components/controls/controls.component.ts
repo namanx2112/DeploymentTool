@@ -7,7 +7,7 @@ import { Fields, HomeTab } from 'src/app/interfaces/home-tab';
   styleUrls: ['./controls.component.css']
 })
 export class ControlsComponent {
-  @Input() curTab: HomeTab;
+  @Input() fields: Fields[];
   constructor(){
     
   }

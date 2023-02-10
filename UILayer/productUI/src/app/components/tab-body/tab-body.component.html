@@ -1,13 +1,18 @@
 <div class="tabsBody">
   <div class="header">{{curTab.tab_header}}</div>
   <div class="SearchPart">
-    <app-controls [curTab]="curTab"></app-controls>
+    <app-controls [fields]="curTab.search_fields"></app-controls>
+    <button mat-fab extended color="warn" class="searchButton" (click)="OpenNew()">
+      <mat-icon>new</mat-icon>
+      New
+    </button>
     <button mat-fab extended color="warn" class="searchButton">
       <mat-icon>search</mat-icon>
       Search
     </button>
   </div>
   <div class="tablePart">
-      <app-table [curTab]="curTab"></app-table>
+      <app-table *ngIf="secondPart == 'table'" [curTab]="curTab"></app-table>
+      <app-new-edit-object *ngIf="secondPart == 'newEdit'" [curTab]="curTab"></app-new-edit-object>
   </div>
 </div>

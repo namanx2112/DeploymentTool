@@ -11,7 +11,7 @@ namespace DeploymentTool.AppStart
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            config.Filters.Add(new AuthorizeAttribute());
+            //config.Filters.Add(new AuthorizeAttribute());
 
             // Web API routes
             config.MapHttpAttributeRoutes();
@@ -21,6 +21,8 @@ namespace DeploymentTool.AppStart
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
                 );
+            //Web API Exception Handler
+            config.Filters.Add(new globalExceptionHandler());
         }
     }
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HomeTab } from 'src/app/interfaces/home-tab';
 
 @Component({
@@ -8,6 +9,13 @@ import { HomeTab } from 'src/app/interfaces/home-tab';
 })
 export class TabBodyComponent {
   @Input() curTab: HomeTab;
+  secondPart: string;
 
-  constructor(){}
+  constructor(private route:ActivatedRoute, public router: Router){
+    this.secondPart = "table";
+  }
+
+  OpenNew(){
+    this.secondPart = "newEdit"
+  }
 }

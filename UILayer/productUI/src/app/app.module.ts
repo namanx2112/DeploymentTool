@@ -19,6 +19,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { TableComponent } from './components/table/table.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { NewEditObjectComponent } from './components/new-edit-object/new-edit-object.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     HomeTabComponent,
     TabBodyComponent,
     ControlsComponent,
-    TableComponent
+    TableComponent,
+    NewEditObjectComponent
   ],
   imports: [
     BrowserModule,
