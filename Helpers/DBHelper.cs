@@ -26,6 +26,72 @@ namespace DeploymentTool
                 return defaultConnectionString;
             }
         }
+        #region New Code For Brand
+
+        public static void ExecuteNonQuery(string procedureName, params SqlParameter[] parameters)
+        {
+            using (var conn = new SqlConnection(defaultConnectionString))
+            {
+                conn.Open();
+                using (var cmd = new SqlCommand(procedureName, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddRange(parameters);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
+
+        public static T ExecuteProcedure<T>(string procedureName, Func<SqlDataReader, T> mapFunc, ref SqlParameter[] outParam, params SqlParameter[] parameters)
+        {
+            
+            
+            using (var conn = new SqlConnection(defaultConnectionString))
+            {
+                conn.Open();
+                using (var cmd = new SqlCommand(procedureName, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddRange(parameters);
+                    cmd.Parameters.AddRange(outParam);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        return mapFunc(reader);
+                    }
+                }
+            }
+        }
+        public static T ExecuteProcedure<T>(string procedureName, Func<SqlDataReader, T> mapFunc, params SqlParameter[] parameters)
+        {
+            using (var connection = new SqlConnection(defaultConnectionString))
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand(procedureName, connection) { CommandType = CommandType.StoredProcedure })
+                {
+                    if (parameters != null)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        return mapFunc(reader);
+                    }
+                }
+            }
+        }
+        #endregion For Brand
+
+
+
+
+
+
 
 
 

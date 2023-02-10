@@ -16,7 +16,7 @@ namespace DeploymentTool.AppStart
             //log the exception here
             var response = new HttpResponseMessage(HttpStatusCode.InternalServerError)
             {
-                Content = new StringContent("An error occurred while processing your request."),
+                Content = new StringContent("An error occurred while processing your request."+exception),
                 ReasonPhrase = "Internal Server Error"
             };
             context.Response = response;

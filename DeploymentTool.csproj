@@ -906,6 +906,7 @@
     <Compile Include="AppStart\globalExceptionHandler.cs" />
     <Compile Include="AppStart\RouteConfig.cs" />
     <Compile Include="Auth\JwtManager.cs" />
+    <Compile Include="Controller\BrandController.cs" />
     <Compile Include="Controller\StoreScreenConfigController.cs" />
     <Compile Include="Controller\TableController.cs" />
     <Compile Include="Controller\TokenController.cs" />
@@ -918,6 +919,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DBHelper.cs" />
+    <Compile Include="Model\Brand.cs" />
     <Compile Include="Model\Params.cs" />
     <Compile Include="Model\SearchField.cs" />
     <Compile Include="Model\StoreFieldConfig.cs" />
@@ -1204,6 +1206,8 @@
     <Content Include="ui\assets\bootstrap-3.3.7\package.json" />
     <Content Include="ui\assets\bootstrap-3.3.7\README.md" />
     <Content Include="ui\assets\bootstrap-3.3.7\_config.yml" />
+    <None Include="Properties\PublishProfiles\DeploymentTool - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -57,8 +57,9 @@
   .account-type
   {
       font-family: 'Roboto', sans-serif;
-      color: #A0AEB6;
-      font-size: 1.3em;
+      /* color: #A0AEB6; */
+      /* font-size: 1.3em; */
+      color:#444;
       font-weight: bold;
       line-height: 18px;
   }
@@ -174,7 +175,7 @@
       display:block;
       width: 100%;
       padding: 1em;
-      min-height: 6em;
+      /* min-height: 6em; */
   }
   
   /** For elements on the same line that jump down - I */
