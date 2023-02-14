@@ -107,7 +107,7 @@ namespace DeploymentTool.Controller
         public HttpResponseMessage CreateBrand([FromBody] Brand brand)
         {
 
-            var securityContext = HttpContext.Items["SecurityContext"] as MyApiContext;
+          
             var parameters = new SqlParameter[]
                 {
                     new SqlParameter("@tBrandName", brand.tBrandName),
@@ -118,7 +118,7 @@ namespace DeploymentTool.Controller
                     new SqlParameter("@tBrandCategory", brand.tBrandCategory),
                     new SqlParameter("@tBrandContact", brand.tBrandContact),
                     new SqlParameter("@nBrandLogoAttachmentID", brand.nBrandLogoAttachmentID),
-                    new SqlParameter("@nUserId",)
+                    new SqlParameter("@nUserId","")
                 };
             SqlParameter[] arroutParam = new SqlParameter[1];
                 SqlParameter outParam = new SqlParameter();
