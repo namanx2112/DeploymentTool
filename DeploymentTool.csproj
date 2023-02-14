@@ -125,6 +125,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="ui\3rdpartylicenses.txt" />
     <Content Include="UILayer\productUI\.gitignore" />
     <Content Include="UILayer\productUI\src\app\app.component.css" />
     <Content Include="UILayer\productUI\src\app\app.component.html" />
@@ -929,6 +930,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="ui\assets\bootstrap-3.3.7\.editorconfig" />
+    <Content Include="ui\assets\bootstrap-3.3.7\.gitattributes" />
+    <Content Include="ui\assets\bootstrap-3.3.7\.gitignore" />
     <Content Include="UILayer\productUI\.editorconfig" />
     <Content Include="UILayer\productUI\angular.json" />
     <Content Include="UILayer\productUI\package-lock.json" />
@@ -1362,7 +1366,7 @@
     <TypeScriptCompile Include="UILayer\productUI\src\main.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

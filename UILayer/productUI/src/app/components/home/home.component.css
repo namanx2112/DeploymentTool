@@ -191,7 +191,9 @@ h5 {
 .pl-0 {
     padding-left: 0px;
 }
-
+.containerTab{
+    height: calc(100% - 325px);
+}
 .tab-content {
     padding: 15px;
     background-color: #fff;

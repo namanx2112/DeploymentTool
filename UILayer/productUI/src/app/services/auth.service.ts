@@ -28,6 +28,11 @@ export class AuthService {
       });
   }
 
+  getHttpHeaders(): HttpHeaders{
+    let tHeader = new HttpHeaders().set('Content-Type', 'application/json').set("Authorization", "Bearer " + this.getToken());
+    return tHeader;
+  }
+
   getToken() {
     return localStorage.getItem('access_token');
   }
