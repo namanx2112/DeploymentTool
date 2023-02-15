@@ -14,7 +14,7 @@ namespace DeploymentTool.Model
         public string password { get; set; }
         public string tName { get; set; }
         public string tEmail { get; set; }
-        public int nRoleType { get; set; }
+        public string nRoleType { get; set; }
               
         public AuthResponse auth { get; set; }
 
