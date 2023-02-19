@@ -1,3 +1,5 @@
+import { ValidatorFn } from "@angular/forms"
+
 export interface HomeTab {
     tab_name: string,
     tab_header: string,
@@ -16,16 +18,19 @@ export interface Fields{
     field_name: string,
     fieldUniqeName: string,
     field_type: FieldType,
+    readOnly: boolean,
     field_placeholder: string | null,
     invalid: boolean | false,
-    regex_validation: string,
+    validator: ValidatorFn[],
     mandatory: boolean,
+    defaultVal: string,
     conditional_mandatory?: ConditionalOption,
-    options?: OptionType[]
+    options?: OptionType[],
+    hidden: boolean
 }
 
 export enum FieldType{
-    text, email, date, time, dropdown, 
+    text, email, date, time, dropdown, number
 }
 
 export interface OptionType{

@@ -4,3 +4,4 @@
 
 /obj/Debug/DeploymentTool.csproj.AssemblyReference.cache
 /.vs/DeploymentTool/v17/.wsuo
+/Controller/TokenController.cs

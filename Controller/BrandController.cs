@@ -13,6 +13,7 @@ namespace DeploymentTool.Controller
 {
     public class BrandController : ApiController
     {
+        [Route("api/GetAll")]
         [AllowAnonymous]
         // GET api/<controller>
         [HttpGet]
@@ -59,6 +60,8 @@ namespace DeploymentTool.Controller
 
 
         // GET api/<controller>/5
+
+        [Route("api/Get")]
         [HttpPost]
         public HttpResponseMessage Get([FromBody] dynamic Brand)
         {
@@ -99,6 +102,65 @@ namespace DeploymentTool.Controller
             }
         }
 
+        [Route("api/CreateBrand")]
+        [AllowAnonymous]
+        [HttpPost]
+        public HttpResponseMessage CreateBrand(Brand brand)
+        {
+            if (brand.aBrandId > 0) {
+                var parameters = new SqlParameter[]
+               {
+                    new SqlParameter("@tBrandName", brand.tBrandName),
+                    new SqlParameter("@tBrandDescription", brand.tBrandDescription),
+                    new SqlParameter("@tBrandWebsite", brand.tBrandWebsite),
+                    new SqlParameter("@tBrandCountry", brand.tBrandCountry),
+                    new SqlParameter("@tBrandEstablished", brand.tBrandEstablished),
+                    new SqlParameter("@tBrandCategory", brand.tBrandCategory),
+                    new SqlParameter("@tBrandContact", brand.tBrandContact),
+                    new SqlParameter("@nBrandLogoAttachmentID", brand.nBrandLogoAttachmentID),
+                    new SqlParameter("@nCreatedBy", brand.nCreatedBy),
+                    new SqlParameter("@nUpdateBy", brand.nUpdateBy),
+                    new SqlParameter("@dtCreatedOn", brand.dtCreatedOn),
+                    new SqlParameter("@dtUpdatedOn", brand.dtUpdatedOn),
+                    new SqlParameter("@bDeleted", brand.bDeleted)
+               };
+                DBHelper.ExecuteNonQuery("sprocBrandUpdate", parameters);
+                return Request.CreateResponse(HttpStatusCode.OK, brand);
+            }
+            else
+            {
+                //brand.aBrandId = 111;
+                var parameters = new SqlParameter[]
+                   {
+                    new SqlParameter("@tBrandName", brand.tBrandName),
+                    new SqlParameter("@tBrandDescription", brand.tBrandDescription),
+                    new SqlParameter("@tBrandWebsite", brand.tBrandWebsite),
+                    new SqlParameter("@tBrandCountry", brand.tBrandCountry),
+                    new SqlParameter("@tBrandEstablished", brand.tBrandEstablished),
+                    new SqlParameter("@tBrandCategory", brand.tBrandCategory),
+                    new SqlParameter("@tBrandContact", brand.tBrandContact),
+                    new SqlParameter("@nBrandLogoAttachmentID", brand.nBrandLogoAttachmentID),
+                    new SqlParameter("@nUserId",brand.nCreatedBy),
+                   };
+                SqlParameter[] arroutParam = new SqlParameter[1];
+                SqlParameter outParam = new SqlParameter();
+                outParam.ParameterName = "@nBrandID";
+                outParam.SqlDbType = SqlDbType.Int;
+                outParam.Direction = ParameterDirection.Output;
+                outParam.Value = 0;
+                arroutParam[0] = outParam;
+
+                var result = DBHelper.ExecuteProcedure<Brand>("sprocBrandCreate", reader =>
+                {
+                    return new Brand();
+                }, ref arroutParam, parameters);
+                brand.aBrandId = (int)arroutParam[0].Value;
+
+                return Request.CreateResponse(HttpStatusCode.OK, brand);
+            }
+        }
+
+        [Route("api/Post")]
         // POST api/<controller>
         public HttpResponseMessage Post([FromBody] dynamic brand)
         {
@@ -133,6 +195,7 @@ namespace DeploymentTool.Controller
             };
 
         }
+        [Route("api/Put")]
         [HttpPost]
         // PUT api/<controller>/5
         public HttpResponseMessage Put([FromBody] Brand brand)
@@ -161,6 +224,7 @@ namespace DeploymentTool.Controller
 
         }
 
+        [Route("api/Delete")]
         // DELETE api/<controller>/5
         [HttpPost]
         public HttpResponseMessage Delete(dynamic body)

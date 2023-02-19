@@ -14,11 +14,11 @@ namespace DeploymentTool.AppStart
             //config.Filters.Add(new AuthorizeAttribute());
 
             // Web API routes
-            config.MapHttpAttributeRoutes();
+            //config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApiRoute",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
                 );
             //Web API Exception Handler

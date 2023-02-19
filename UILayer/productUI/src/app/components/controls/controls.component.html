@@ -1,16 +1,25 @@
-<mat-form-field appearance="outline" class="curField" *ngFor="let curControl of fields; let index = index">
-    <mat-label [attr.for]="curControl.field_name">{{curControl.field_name}}</mat-label>
-    <div [ngSwitch]="curControl.field_type">
-        <input *ngSwitchCase="0" matInput placeholder="{{curControl.field_placeholder}}" type="text" required>
-        <input *ngSwitchCase="1" matInput placeholder="{{curControl.field_placeholder}}" type="email" required>
-        <input *ngSwitchCase="2" matInput placeholder="{{curControl.field_placeholder}}" type="date" required>
-        <input *ngSwitchCase="3" matInput placeholder="{{curControl.field_placeholder}}" type="time" required>
-        <!-- <app-date-control *ngSwitchCase="2" [curControl]="curControl"></app-date-control>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmitClick()">
+    <mat-form-field appearance="outline" class="curField" *ngFor="let curControl of fields; let index = index">
+        <mat-label *ngIf="curControl.hidden == false" [attr.for]="curControl.field_name">{{curControl.field_name}}</mat-label>
+        <div *ngIf="curControl.hidden == false" [ngSwitch]="curControl.field_type">
+            <input *ngSwitchCase="0" matInput placeholder="{{curControl.field_placeholder}}" type="text"
+                formControlName="{{curControl.fieldUniqeName}}" [ngModel]="controlValues[curControl.fieldUniqeName]">
+            <input *ngSwitchCase="1" matInput placeholder="{{curControl.field_placeholder}}" type="email"
+                formControlName="{{curControl.fieldUniqeName}}" [ngModel]="controlValues[curControl.fieldUniqeName]">
+            <input *ngSwitchCase="2" matInput placeholder="{{curControl.field_placeholder}}" type="date"
+                formControlName="{{curControl.fieldUniqeName}}" [ngModel]="controlValues[curControl.fieldUniqeName]">
+            <input *ngSwitchCase="3" matInput placeholder="{{curControl.field_placeholder}}" type="time"
+                formControlName="{{curControl.fieldUniqeName}}" [ngModel]="controlValues[curControl.fieldUniqeName]">
+            <!-- <app-date-control *ngSwitchCase="2" [curControl]="curControl"></app-date-control>
         <app-date-control *ngSwitchCase="3" [curControl]="curControl"></app-date-control> -->
-        <mat-select *ngSwitchCase="4">
-            <mat-option *ngFor="let opt of curControl.options"
-                [value]="opt.optionIndex">{{opt.optionDisplayName}}</mat-option>
-        </mat-select>
-    </div>
-    <mat-error *ngIf="curControl.invalid">{{getErrorMessage()}}</mat-error>
-</mat-form-field>
+            <mat-select *ngSwitchCase="4" formControlName="{{curControl.fieldUniqeName}}" [ngModel]="controlValues[curControl.fieldUniqeName]">
+                <mat-option *ngFor="let opt of curControl.options"
+                    [value]="opt.optionIndex">{{opt.optionDisplayName}}</mat-option>
+            </mat-select>
+            <input *ngSwitchCase="5" matInput placeholder="{{curControl.field_placeholder}}" type="number"
+                formControlName="{{curControl.fieldUniqeName}}" [ngModel]="controlValues[curControl.fieldUniqeName]">
+        </div>
+        <mat-error *ngIf="curControl.hidden == false && hasEror(curControl)">{{getErrorMessage(curControl)}}</mat-error>
+    </mat-form-field>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

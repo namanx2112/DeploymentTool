@@ -1,7 +1,7 @@
 <div class="tabsBody">
   <div class="header">{{curTab.tab_header}}</div>
   <div class="SearchPart">
-    <app-controls [fields]="curTab.search_fields"></app-controls>
+    <app-controls [fields]="curTab.search_fields" [controlValues]="curControlVals" (onSubmit)="onSubmit($event)"></app-controls>
     <button mat-fab extended color="warn" class="searchButton" (click)="OpenNew()">
       <mat-icon>new</mat-icon>
       New
