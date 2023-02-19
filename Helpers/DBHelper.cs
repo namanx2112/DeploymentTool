@@ -154,7 +154,9 @@ namespace DeploymentTool
                 SqlParameter outputPara2 = new SqlParameter();
                 outputPara2.ParameterName = "@nRoleType ";
                 outputPara2.Direction = System.Data.ParameterDirection.Output;
-                outputPara2.SqlDbType = System.Data.SqlDbType.Int;
+                outputPara2.SqlDbType = System.Data.SqlDbType.NVarChar;
+                outputPara2.Size = 255;
+
                 SqlParameter outputPara3 = new SqlParameter();
                 outputPara3.ParameterName = "@nUserID  ";
                 outputPara3.Direction = System.Data.ParameterDirection.Output;
@@ -168,7 +170,7 @@ namespace DeploymentTool
 
                 objUser.tName = outputPara.Value.ToString();
                 objUser.tEmail = outputPara1.Value.ToString();
-                objUser.nRoleType = Convert.ToInt32(outputPara2.Value.ToString());
+                objUser.nRoleType = outputPara2.Value.ToString();
                 objUser.nUserID = Convert.ToInt32(outputPara3.Value.ToString());
             }
 
