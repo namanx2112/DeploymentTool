@@ -385,253 +385,155 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ControlsComponent": () => (/* binding */ ControlsComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 4650);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 4006);
-/* harmony import */ var src_app_interfaces_commons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/interfaces/commons */ 1497);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 6895);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/form-field */ 9549);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/input */ 284);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/select */ 4385);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/core */ 7873);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 4650);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 6895);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/form-field */ 9549);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/input */ 284);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/select */ 4385);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/core */ 7873);
 
 
 
 
 
 
-
-
-
-
-function ControlsComponent_mat_form_field_1_mat_label_1_Template(rf, ctx) {
+function ControlsComponent_mat_form_field_0_input_4_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 9);
   }
   if (rf & 2) {
-    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("for", curControl_r1.field_name);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](curControl_r1.field_name);
+    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("placeholder", curControl_r1.field_placeholder);
   }
 }
-function ControlsComponent_mat_form_field_1_div_2_input_1_Template(rf, ctx) {
+function ControlsComponent_mat_form_field_0_input_5_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "input", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 10);
   }
   if (rf & 2) {
-    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2).$implicit;
-    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("placeholder", curControl_r1.field_placeholder);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("formControlName", curControl_r1.fieldUniqeName);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx_r7.controlValues[curControl_r1.fieldUniqeName]);
+    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("placeholder", curControl_r1.field_placeholder);
   }
 }
-function ControlsComponent_mat_form_field_1_div_2_input_2_Template(rf, ctx) {
+function ControlsComponent_mat_form_field_0_input_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "input", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 11);
   }
   if (rf & 2) {
-    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2).$implicit;
-    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("placeholder", curControl_r1.field_placeholder);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("formControlName", curControl_r1.fieldUniqeName);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx_r8.controlValues[curControl_r1.fieldUniqeName]);
+    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("placeholder", curControl_r1.field_placeholder);
   }
 }
-function ControlsComponent_mat_form_field_1_div_2_input_3_Template(rf, ctx) {
+function ControlsComponent_mat_form_field_0_input_7_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "input", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "input", 12);
   }
   if (rf & 2) {
-    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2).$implicit;
-    const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("placeholder", curControl_r1.field_placeholder);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("formControlName", curControl_r1.fieldUniqeName);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx_r9.controlValues[curControl_r1.fieldUniqeName]);
+    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("placeholder", curControl_r1.field_placeholder);
   }
 }
-function ControlsComponent_mat_form_field_1_div_2_input_4_Template(rf, ctx) {
+function ControlsComponent_mat_form_field_0_mat_select_8_mat_option_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "input", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2).$implicit;
-    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("placeholder", curControl_r1.field_placeholder);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("formControlName", curControl_r1.fieldUniqeName);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx_r10.controlValues[curControl_r1.fieldUniqeName]);
+    const opt_r14 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", opt_r14.optionIndex);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](opt_r14.optionDisplayName);
   }
 }
-function ControlsComponent_mat_form_field_1_div_2_mat_select_5_mat_option_1_Template(rf, ctx) {
+function ControlsComponent_mat_form_field_0_mat_select_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-select");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ControlsComponent_mat_form_field_0_mat_select_8_mat_option_1_Template, 2, 2, "mat-option", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const opt_r18 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", opt_r18.optionIndex);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](opt_r18.optionDisplayName);
+    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", curControl_r1.options);
   }
 }
-function ControlsComponent_mat_form_field_1_div_2_mat_select_5_Template(rf, ctx) {
+function ControlsComponent_mat_form_field_0_mat_error_9_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-select", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ControlsComponent_mat_form_field_1_div_2_mat_select_5_mat_option_1_Template, 2, 2, "mat-option", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2).$implicit;
-    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("formControlName", curControl_r1.fieldUniqeName);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx_r11.controlValues[curControl_r1.fieldUniqeName]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", curControl_r1.options);
+    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r8.getErrorMessage());
   }
 }
-function ControlsComponent_mat_form_field_1_div_2_input_6_Template(rf, ctx) {
+function ControlsComponent_mat_form_field_0_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "input", 20);
-  }
-  if (rf & 2) {
-    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2).$implicit;
-    const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("placeholder", curControl_r1.field_placeholder);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("formControlName", curControl_r1.fieldUniqeName);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx_r12.controlValues[curControl_r1.fieldUniqeName]);
-  }
-}
-function ControlsComponent_mat_form_field_1_div_2_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ControlsComponent_mat_form_field_1_div_2_input_1_Template, 1, 3, "input", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, ControlsComponent_mat_form_field_1_div_2_input_2_Template, 1, 3, "input", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, ControlsComponent_mat_form_field_1_div_2_input_3_Template, 1, 3, "input", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](4, ControlsComponent_mat_form_field_1_div_2_input_4_Template, 1, 3, "input", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, ControlsComponent_mat_form_field_1_div_2_mat_select_5_Template, 2, 3, "mat-select", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, ControlsComponent_mat_form_field_1_div_2_input_6_Template, 1, 3, "input", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngSwitch", curControl_r1.field_type);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngSwitchCase", 0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngSwitchCase", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngSwitchCase", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngSwitchCase", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngSwitchCase", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngSwitchCase", 5);
-  }
-}
-function ControlsComponent_mat_form_field_1_mat_error_3_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const curControl_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r5.getErrorMessage(curControl_r1));
-  }
-}
-function ControlsComponent_mat_form_field_1_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-form-field", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ControlsComponent_mat_form_field_1_mat_label_1_Template, 2, 2, "mat-label", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, ControlsComponent_mat_form_field_1_div_2_Template, 7, 7, "div", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, ControlsComponent_mat_form_field_1_mat_error_3_Template, 2, 1, "mat-error", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 1)(1, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, ControlsComponent_mat_form_field_0_input_4_Template, 1, 1, "input", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, ControlsComponent_mat_form_field_0_input_5_Template, 1, 1, "input", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, ControlsComponent_mat_form_field_0_input_6_Template, 1, 1, "input", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, ControlsComponent_mat_form_field_0_input_7_Template, 1, 1, "input", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, ControlsComponent_mat_form_field_0_mat_select_8_Template, 2, 1, "mat-select", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, ControlsComponent_mat_form_field_0_mat_error_9_Template, 2, 1, "mat-error", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const curControl_r1 = ctx.$implicit;
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", curControl_r1.hidden == false);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", curControl_r1.hidden == false);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", curControl_r1.hidden == false && ctx_r0.hasEror(curControl_r1));
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("for", curControl_r1.field_name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](curControl_r1.field_name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitch", curControl_r1.field_type);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitchCase", 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitchCase", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitchCase", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitchCase", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitchCase", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", curControl_r1.invalid);
   }
 }
 class ControlsComponent {
-  constructor() {
-    this.onSubmit = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
-    this.formGroup = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroup({});
-  }
-  ngOnInit() {
-    for (const formField of this.fields) {
-      if (typeof this.controlValues[formField.fieldUniqeName] == 'undefined') this.controlValues[formField.fieldUniqeName] = formField.defaultVal;
-      this.formGroup.addControl(formField.fieldUniqeName, new _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControl("", formField.validator));
-    }
-  }
-  hasEror(cControl) {
-    let has = false;
-    let control = this.formGroup.get(cControl.fieldUniqeName);
-    if (typeof control != 'undefined' && control != null) {
-      has = !control.valid;
-    }
-    return has;
-  }
-  getErrorMessage(cControl) {
-    let eMsg = "Error";
-    let control = this.formGroup.get(cControl.fieldUniqeName);
-    if (typeof control != 'undefined' && control != null && control.errors != null) {
-      if (control.errors['required']) eMsg = src_app_interfaces_commons__WEBPACK_IMPORTED_MODULE_0__.ControlsErrorMessages.Requird;else if (control.errors['email']) eMsg = src_app_interfaces_commons__WEBPACK_IMPORTED_MODULE_0__.ControlsErrorMessages.Email;else if (control.errors['range']) eMsg = src_app_interfaces_commons__WEBPACK_IMPORTED_MODULE_0__.ControlsErrorMessages.Range;
-    }
-    return eMsg;
-  }
-  onSubmitClick() {
-    // if (this.formGroup.valid) {
-    this.onSubmit.emit(this.formGroup);
-    // }
+  constructor() {}
+  getErrorMessage() {
+    return "Error";
   }
 }
-
 ControlsComponent.ɵfac = function ControlsComponent_Factory(t) {
   return new (t || ControlsComponent)();
 };
-ControlsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+ControlsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: ControlsComponent,
   selectors: [["app-controls"]],
   inputs: {
-    fields: "fields",
-    controlValues: "controlValues"
+    fields: "fields"
   },
-  outputs: {
-    onSubmit: "onSubmit"
-  },
-  decls: 4,
-  vars: 2,
-  consts: [[3, "formGroup", "ngSubmit"], ["appearance", "outline", "class", "curField", 4, "ngFor", "ngForOf"], ["type", "submit", 1, "btn", "btn-primary"], ["appearance", "outline", 1, "curField"], [4, "ngIf"], [3, "ngSwitch", 4, "ngIf"], [3, "ngSwitch"], ["matInput", "", "type", "text", 3, "placeholder", "formControlName", "ngModel", 4, "ngSwitchCase"], ["matInput", "", "type", "email", 3, "placeholder", "formControlName", "ngModel", 4, "ngSwitchCase"], ["matInput", "", "type", "date", 3, "placeholder", "formControlName", "ngModel", 4, "ngSwitchCase"], ["matInput", "", "type", "time", 3, "placeholder", "formControlName", "ngModel", 4, "ngSwitchCase"], [3, "formControlName", "ngModel", 4, "ngSwitchCase"], ["matInput", "", "type", "number", 3, "placeholder", "formControlName", "ngModel", 4, "ngSwitchCase"], ["matInput", "", "type", "text", 3, "placeholder", "formControlName", "ngModel"], ["matInput", "", "type", "email", 3, "placeholder", "formControlName", "ngModel"], ["matInput", "", "type", "date", 3, "placeholder", "formControlName", "ngModel"], ["matInput", "", "type", "time", 3, "placeholder", "formControlName", "ngModel"], [3, "formControlName", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["matInput", "", "type", "number", 3, "placeholder", "formControlName", "ngModel"]],
+  decls: 1,
+  vars: 1,
+  consts: [["appearance", "outline", "class", "curField", 4, "ngFor", "ngForOf"], ["appearance", "outline", 1, "curField"], [3, "ngSwitch"], ["matInput", "", "type", "text", "required", "", 3, "placeholder", 4, "ngSwitchCase"], ["matInput", "", "type", "email", "required", "", 3, "placeholder", 4, "ngSwitchCase"], ["matInput", "", "type", "date", "required", "", 3, "placeholder", 4, "ngSwitchCase"], ["matInput", "", "type", "time", "required", "", 3, "placeholder", 4, "ngSwitchCase"], [4, "ngSwitchCase"], [4, "ngIf"], ["matInput", "", "type", "text", "required", "", 3, "placeholder"], ["matInput", "", "type", "email", "required", "", 3, "placeholder"], ["matInput", "", "type", "date", "required", "", 3, "placeholder"], ["matInput", "", "type", "time", "required", "", 3, "placeholder"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"]],
   template: function ControlsComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngSubmit", function ControlsComponent_Template_form_ngSubmit_0_listener() {
-        return ctx.onSubmitClick();
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ControlsComponent_mat_form_field_1_Template, 4, 3, "mat-form-field", 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "button", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Submit");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, ControlsComponent_mat_form_field_0_Template, 10, 9, "mat-form-field", 0);
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.formGroup);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.fields);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.fields);
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgSwitch, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgSwitchCase, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__.MatError, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControlName, _angular_material_input__WEBPACK_IMPORTED_MODULE_5__.MatInput, _angular_material_select__WEBPACK_IMPORTED_MODULE_6__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_7__.MatOption],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgSwitch, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgSwitchCase, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_2__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_2__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_2__.MatError, _angular_material_input__WEBPACK_IMPORTED_MODULE_3__.MatInput, _angular_material_select__WEBPACK_IMPORTED_MODULE_4__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_5__.MatOption],
   styles: [".curField[_ngcontent-%COMP%] {\r\n    width: 33%;\r\n    padding: 0px 20px;\r\n    margin-top: 10px;\r\n}"]
 });
 
@@ -648,12 +550,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "HomeTabComponent": () => (/* binding */ HomeTabComponent)
 /* harmony export */ });
 /* harmony import */ var src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/interfaces/home-tab */ 3077);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 4006);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 4650);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 6895);
-/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/tabs */ 3848);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 6895);
+/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/tabs */ 3848);
 /* harmony import */ var _tab_body_tab_body_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tab-body/tab-body.component */ 7544);
-
 
 
 
@@ -689,81 +589,60 @@ class HomeTabComponent {
       search_fields: [{
         field_name: "User Name",
         fieldUniqeName: "ABCD",
-        defaultVal: "",
-        readOnly: false,
         invalid: false,
         field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.text,
         field_placeholder: "Enter USer Name",
-        validator: [],
-        mandatory: false,
-        hidden: false
+        regex_validation: "",
+        mandatory: false
       }],
       fields: [{
         field_name: "Name",
-        fieldUniqeName: "Name",
-        defaultVal: "",
-        readOnly: false,
+        fieldUniqeName: "ABCD",
         invalid: false,
         field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.text,
         field_placeholder: "Enter Name",
-        validator: [],
-        mandatory: false,
-        hidden: false
+        regex_validation: "",
+        mandatory: false
       }, {
         field_name: "Mobile",
-        fieldUniqeName: "Mobile",
-        defaultVal: "",
-        readOnly: false,
+        fieldUniqeName: "ABCD",
         invalid: false,
         field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.text,
         field_placeholder: "Enter Name",
-        validator: [],
-        mandatory: false,
-        hidden: false
+        regex_validation: "",
+        mandatory: false
       }, {
         field_name: "Email",
-        fieldUniqeName: "Email",
-        defaultVal: "",
-        readOnly: false,
+        fieldUniqeName: "ABCD",
         invalid: false,
         field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.email,
         field_placeholder: "Enter mail",
-        validator: [],
-        mandatory: false,
-        hidden: false
+        regex_validation: "",
+        mandatory: false
       }, {
         field_name: "User DOB",
-        fieldUniqeName: "DOB",
-        defaultVal: "",
-        readOnly: false,
+        fieldUniqeName: "ABCD",
         invalid: false,
         field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.date,
         field_placeholder: "Enter DOB",
-        validator: [],
-        mandatory: false,
-        hidden: false
+        regex_validation: "",
+        mandatory: false
       }, {
         field_name: "Created Time",
-        fieldUniqeName: "Time",
-        defaultVal: "",
-        readOnly: false,
+        fieldUniqeName: "ABCD",
         invalid: false,
         field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.time,
         field_placeholder: "Enter Created Time",
-        validator: [],
-        mandatory: false,
-        hidden: false
+        regex_validation: "",
+        mandatory: false
       }, {
         field_name: "User Time",
-        fieldUniqeName: "uTime",
-        defaultVal: "",
-        readOnly: false,
+        fieldUniqeName: "ABCD",
         invalid: false,
         field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.dropdown,
         field_placeholder: "Enter User Roles",
-        validator: [],
+        regex_validation: "",
         mandatory: false,
-        hidden: false,
         options: [{
           optionDisplayName: "Admin",
           optionIndex: 0,
@@ -785,172 +664,74 @@ class HomeTabComponent {
       tab_unique_name: "",
       search_fields: [{
         field_name: "Brands Name",
-        fieldUniqeName: "tBrandName",
-        defaultVal: "",
-        readOnly: false,
+        fieldUniqeName: "ABCD",
         invalid: false,
         field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.text,
         field_placeholder: "Enter Brands Name",
-        validator: [],
-        mandatory: false,
-        hidden: false
+        regex_validation: "",
+        mandatory: false
       }],
       fields: [{
-        field_name: "Brand Id",
-        fieldUniqeName: "aBrandId",
-        defaultVal: "",
-        readOnly: true,
-        invalid: false,
-        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.number,
-        field_placeholder: "Enter Brands Id",
-        validator: [],
-        mandatory: false,
-        hidden: false
-      }, {
         field_name: "Brands Name",
-        fieldUniqeName: "tBrandName",
-        defaultVal: "",
-        readOnly: false,
+        fieldUniqeName: "ABCD",
         invalid: false,
         field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.text,
         field_placeholder: "Enter Brands Name",
-        validator: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required],
-        mandatory: false,
-        hidden: false
+        regex_validation: "",
+        mandatory: false
       }, {
-        field_name: "Brands Description",
-        fieldUniqeName: "tBrandDescription",
-        defaultVal: "",
-        readOnly: false,
+        field_name: "Brands Mobile",
+        fieldUniqeName: "ABCD",
         invalid: false,
         field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.text,
-        field_placeholder: "Enter Brands Description",
-        validator: [],
-        mandatory: false,
-        hidden: false
+        field_placeholder: "Enter Brands mobile",
+        regex_validation: "",
+        mandatory: false
       }, {
-        field_name: "Brands Website",
-        fieldUniqeName: "tBrandWebsite",
-        defaultVal: "",
-        readOnly: false,
+        field_name: "Brands Email",
+        fieldUniqeName: "ABCD",
         invalid: false,
-        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.text,
-        field_placeholder: "Enter Brands Website",
-        validator: [],
-        mandatory: false,
-        hidden: false
+        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.email,
+        field_placeholder: "Enter Brands mail",
+        regex_validation: "",
+        mandatory: false
       }, {
-        field_name: "Brands Country",
-        fieldUniqeName: "tBrandCountry",
-        defaultVal: "",
-        readOnly: false,
+        field_name: "Brands DOB",
+        fieldUniqeName: "ABCD",
+        invalid: false,
+        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.date,
+        field_placeholder: "Brands DOB",
+        regex_validation: "",
+        mandatory: false
+      }, {
+        field_name: "Brands Created Time",
+        fieldUniqeName: "ABCD",
+        invalid: false,
+        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.time,
+        field_placeholder: "Brands Created Time",
+        regex_validation: "",
+        mandatory: false
+      }, {
+        field_name: "Brands Role",
+        fieldUniqeName: "ABCD",
         invalid: false,
         field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.dropdown,
-        field_placeholder: "Enter Brands Country",
-        validator: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required],
+        field_placeholder: "Brands User Roles",
+        regex_validation: "",
         mandatory: false,
-        hidden: false,
         options: [{
-          optionDisplayName: "India",
+          optionDisplayName: "Admin",
           optionIndex: 0,
           optionOrder: 1
         }, {
-          optionDisplayName: "USA",
+          optionDisplayName: "User",
           optionIndex: 1,
           optionOrder: 2
         }, {
-          optionDisplayName: "UAE",
+          optionDisplayName: "Vendor",
           optionIndex: 2,
           optionOrder: 3
         }]
-      }, {
-        field_name: "Brands Established",
-        fieldUniqeName: "tBrandEstablished",
-        defaultVal: "",
-        readOnly: false,
-        invalid: false,
-        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.date,
-        field_placeholder: "Enter Brands Establishment date",
-        validator: [],
-        mandatory: false,
-        hidden: false
-      }, {
-        field_name: "Brands Category",
-        fieldUniqeName: "tBrandCategory",
-        defaultVal: "",
-        readOnly: false,
-        invalid: false,
-        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.text,
-        field_placeholder: "Enter Brands Category",
-        validator: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.Validators.required],
-        mandatory: false,
-        hidden: false
-      }, {
-        field_name: "Brands Contact",
-        fieldUniqeName: "tBrandContact",
-        defaultVal: "",
-        readOnly: false,
-        invalid: false,
-        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.text,
-        field_placeholder: "Enter Brands Contact",
-        validator: [],
-        mandatory: false,
-        hidden: false
-      }, {
-        field_name: "Brands Attachment Id",
-        fieldUniqeName: "nBrandLogoAttachmentID",
-        defaultVal: "",
-        readOnly: false,
-        invalid: false,
-        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.number,
-        field_placeholder: "Enter Brands Attachment",
-        validator: [],
-        mandatory: false,
-        hidden: true
-      }, {
-        field_name: "Brands Created By",
-        fieldUniqeName: "nCreatedBy",
-        defaultVal: "",
-        readOnly: false,
-        invalid: false,
-        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.number,
-        field_placeholder: "Enter Brands Created By",
-        validator: [],
-        mandatory: false,
-        hidden: true
-      }, {
-        field_name: "Brands Updated by",
-        fieldUniqeName: "nUpdateBy",
-        defaultVal: "",
-        readOnly: false,
-        invalid: false,
-        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.number,
-        field_placeholder: "Enter Brands Updated by",
-        validator: [],
-        mandatory: false,
-        hidden: true
-      }, {
-        field_name: "Brands Created on",
-        fieldUniqeName: "dtCreatedOn",
-        defaultVal: "",
-        readOnly: false,
-        invalid: false,
-        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.date,
-        field_placeholder: "Enter Brands Created on",
-        validator: [],
-        mandatory: false,
-        hidden: true
-      }, {
-        field_name: "Brands Updated on",
-        fieldUniqeName: "dtUpdatedOn",
-        defaultVal: "",
-        readOnly: false,
-        invalid: false,
-        field_type: src_app_interfaces_home_tab__WEBPACK_IMPORTED_MODULE_0__.FieldType.date,
-        field_placeholder: "Enter Brands Updated on",
-        validator: [],
-        mandatory: false,
-        hidden: true
       }]
     }, {
       tab_name: "Franchises",
@@ -1017,7 +798,7 @@ HomeTabComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__
       _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.tabsArray);
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgForOf, _angular_material_tabs__WEBPACK_IMPORTED_MODULE_5__.MatTabContent, _angular_material_tabs__WEBPACK_IMPORTED_MODULE_5__.MatTab, _angular_material_tabs__WEBPACK_IMPORTED_MODULE_5__.MatTabGroup, _tab_body_tab_body_component__WEBPACK_IMPORTED_MODULE_1__.TabBodyComponent]
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, _angular_material_tabs__WEBPACK_IMPORTED_MODULE_4__.MatTabContent, _angular_material_tabs__WEBPACK_IMPORTED_MODULE_4__.MatTab, _angular_material_tabs__WEBPACK_IMPORTED_MODULE_4__.MatTabGroup, _tab_body_tab_body_component__WEBPACK_IMPORTED_MODULE_1__.TabBodyComponent]
 });
 
 /***/ }),
@@ -1206,57 +987,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "NewEditObjectComponent": () => (/* binding */ NewEditObjectComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 4650);
-/* harmony import */ var src_app_services_brand_service_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/services/brand-service.service */ 5735);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/button */ 4859);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/icon */ 7392);
-/* harmony import */ var _controls_controls_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controls/controls.component */ 1656);
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 4650);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/button */ 4859);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/icon */ 7392);
+/* harmony import */ var _controls_controls_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controls/controls.component */ 1656);
 
 
 
 
 class NewEditObjectComponent {
-  constructor(brandService) {
-    this.brandService = brandService;
-    this.curControlVals = {};
-  }
-  onSubmit(controlVals) {
-    this.brandService.CreateBrand(controlVals.value).subscribe(resp => {
-      console.log(resp);
-    });
-  }
+  constructor() {}
 }
 NewEditObjectComponent.ɵfac = function NewEditObjectComponent_Factory(t) {
-  return new (t || NewEditObjectComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](src_app_services_brand_service_service__WEBPACK_IMPORTED_MODULE_0__.BrandServiceService));
+  return new (t || NewEditObjectComponent)();
 };
-NewEditObjectComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
+NewEditObjectComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
   type: NewEditObjectComponent,
   selectors: [["app-new-edit-object"]],
   inputs: {
     curTab: "curTab"
   },
   decls: 5,
-  vars: 2,
-  consts: [[3, "fields", "controlValues", "onSubmit"], ["mat-fab", "", "extended", "", "color", "warn", 1, "searchButton"]],
+  vars: 1,
+  consts: [[3, "fields"], ["mat-fab", "", "extended", "", "color", "warn", 1, "searchButton"]],
   template: function NewEditObjectComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "app-controls", 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("onSubmit", function NewEditObjectComponent_Template_app_controls_onSubmit_0_listener($event) {
-        return ctx.onSubmit($event);
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "button", 1)(2, "mat-icon");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "search");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, " Search\n");
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "app-controls", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "button", 1)(2, "mat-icon");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "search");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, " Search\n");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("fields", ctx.curTab.fields)("controlValues", ctx.curControlVals);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("fields", ctx.curTab.fields);
     }
   },
-  dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_3__.MatFabButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_4__.MatIcon, _controls_controls_component__WEBPACK_IMPORTED_MODULE_1__.ControlsComponent]
+  dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_2__.MatFabButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_3__.MatIcon, _controls_controls_component__WEBPACK_IMPORTED_MODULE_0__.ControlsComponent]
 });
 
 /***/ }),
@@ -1309,13 +1076,11 @@ class TabBodyComponent {
   constructor(route, router) {
     this.route = route;
     this.router = router;
-    this.curControlVals = {};
     this.secondPart = "table";
   }
   OpenNew() {
     this.secondPart = "newEdit";
   }
-  onSubmit(controlVals) {}
 }
 TabBodyComponent.ɵfac = function TabBodyComponent_Factory(t) {
   return new (t || TabBodyComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__.Router));
@@ -1327,18 +1092,15 @@ TabBodyComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__
     curTab: "curTab"
   },
   decls: 16,
-  vars: 5,
-  consts: [[1, "tabsBody"], [1, "header"], [1, "SearchPart"], [3, "fields", "controlValues", "onSubmit"], ["mat-fab", "", "extended", "", "color", "warn", 1, "searchButton", 3, "click"], ["mat-fab", "", "extended", "", "color", "warn", 1, "searchButton"], [1, "tablePart"], [3, "curTab", 4, "ngIf"], [3, "curTab"]],
+  vars: 4,
+  consts: [[1, "tabsBody"], [1, "header"], [1, "SearchPart"], [3, "fields"], ["mat-fab", "", "extended", "", "color", "warn", 1, "searchButton", 3, "click"], ["mat-fab", "", "extended", "", "color", "warn", 1, "searchButton"], [1, "tablePart"], [3, "curTab", 4, "ngIf"], [3, "curTab"]],
   template: function TabBodyComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0)(1, "div", 1);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "div", 2)(4, "app-controls", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("onSubmit", function TabBodyComponent_Template_app_controls_onSubmit_4_listener($event) {
-        return ctx.onSubmit($event);
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "div", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](4, "app-controls", 3);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](5, "button", 4);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function TabBodyComponent_Template_button_click_5_listener() {
         return ctx.OpenNew();
@@ -1362,7 +1124,7 @@ TabBodyComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx.curTab.tab_header);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("fields", ctx.curTab.search_fields)("controlValues", ctx.curControlVals);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("fields", ctx.curTab.search_fields);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](10);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.secondPart == "table");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
@@ -1583,23 +1345,6 @@ function createNewUser(id) {
 
 /***/ }),
 
-/***/ 1497:
-/*!***************************************!*\
-  !*** ./src/app/interfaces/commons.ts ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ControlsErrorMessages": () => (/* binding */ ControlsErrorMessages)
-/* harmony export */ });
-class ControlsErrorMessages {}
-ControlsErrorMessages.Requird = "Field is required";
-ControlsErrorMessages.Email = "Email format is not correct";
-ControlsErrorMessages.Range = "Range is not proper";
-
-/***/ }),
-
 /***/ 3077:
 /*!****************************************!*\
   !*** ./src/app/interfaces/home-tab.ts ***!
@@ -1631,7 +1376,6 @@ var FieldType = /*#__PURE__*/(() => {
     FieldType[FieldType["date"] = 2] = "date";
     FieldType[FieldType["time"] = 3] = "time";
     FieldType[FieldType["dropdown"] = 4] = "dropdown";
-    FieldType[FieldType["number"] = 5] = "number";
   })(FieldType || (FieldType = {}));
   return FieldType;
 })();
@@ -1662,13 +1406,13 @@ class AuthService {
     this.router = router;
     this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders().set('Content-Type', 'application/json');
     this.loginUser = (userName, userPassword) => {
-      return this.http.get(this.configUrl + "token/Get?username=cuong&password=1");
+      return this.http.get(this.configUrl + "token?username=cuong&password=1");
     };
-    this.configUrl = "./api/";
+    this.configUrl = "http://localhost/newprod/api/";
     localStorage.setItem("configUrl", this.configUrl);
   }
   signIn(user) {
-    return this.http.post(this.configUrl + "token/get", user, {
+    return this.http.post(this.configUrl + "token", user, {
       headers: this.headers
     }).subscribe(res => {
       localStorage.setItem('access_token', res.Token);
@@ -1695,45 +1439,6 @@ AuthService.ɵfac = function AuthService_Factory(t) {
 AuthService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
   token: AuthService,
   factory: AuthService.ɵfac,
-  providedIn: 'root'
-});
-
-/***/ }),
-
-/***/ 5735:
-/*!***************************************************!*\
-  !*** ./src/app/services/brand-service.service.ts ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "BrandServiceService": () => (/* binding */ BrandServiceService)
-/* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 4650);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 529);
-/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./auth.service */ 7556);
-
-
-
-class BrandServiceService {
-  constructor(http, authService) {
-    this.http = http;
-    this.authService = authService;
-    this.configUrl = authService.getConfigUrl();
-  }
-  CreateBrand(request) {
-    return this.http.post(this.configUrl + "Brand/CreateBrand", request, {
-      headers: this.authService.getHttpHeaders()
-    });
-  }
-}
-BrandServiceService.ɵfac = function BrandServiceService_Factory(t) {
-  return new (t || BrandServiceService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_auth_service__WEBPACK_IMPORTED_MODULE_0__.AuthService));
-};
-BrandServiceService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-  token: BrandServiceService,
-  factory: BrandServiceService.ɵfac,
   providedIn: 'root'
 });
 

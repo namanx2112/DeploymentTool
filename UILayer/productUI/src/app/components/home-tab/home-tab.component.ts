@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FieldType, HomeTab, TabType } from 'src/app/interfaces/home-tab';
-import { ValidatorFn, Validators } from "@angular/forms"
 
 @Component({
   selector: 'app-home-tab',
@@ -20,87 +19,66 @@ export class HomeTabComponent {
           search_fields: [{
             field_name: "User Name",
             fieldUniqeName: "ABCD",
-            defaultVal: "",
-            readOnly: false,
             invalid: false,
             field_type: FieldType.text,
             field_placeholder: "Enter USer Name",
-            validator: [],
-            mandatory: false,
-            hidden: false
+            regex_validation: "",
+            mandatory: false
           }],
           fields: [
             {
               field_name: "Name",
-              fieldUniqeName: "Name",
-              defaultVal: "",
-              readOnly: false,
+              fieldUniqeName: "ABCD",
               invalid: false,
               field_type: FieldType.text,
               field_placeholder: "Enter Name",
-              validator: [],
-              mandatory: false,
-              hidden: false
+              regex_validation: "",
+              mandatory: false
             },
             {
               field_name: "Mobile",
-              fieldUniqeName: "Mobile",
-              defaultVal: "",
-              readOnly: false,
+              fieldUniqeName: "ABCD",
               invalid: false,
               field_type: FieldType.text,
               field_placeholder: "Enter Name",
-              validator: [],
-              mandatory: false,
-              hidden: false
+              regex_validation: "",
+              mandatory: false
             },
             {
               field_name: "Email",
-              fieldUniqeName: "Email",
-              defaultVal: "",
-              readOnly: false,
+              fieldUniqeName: "ABCD",
               invalid: false,
               field_type: FieldType.email,
               field_placeholder: "Enter mail",
-              validator: [],
-              mandatory: false,
-              hidden: false
+              regex_validation: "",
+              mandatory: false
             },
             {
               field_name: "User DOB",
-              fieldUniqeName: "DOB",
-              defaultVal: "",
-              readOnly: false,
+              fieldUniqeName: "ABCD",
               invalid: false,
               field_type: FieldType.date,
               field_placeholder: "Enter DOB",
-              validator: [],
-              mandatory: false,
-              hidden: false
+              regex_validation: "",
+              mandatory: false
             },
             {
               field_name: "Created Time",
-              fieldUniqeName: "Time",
-              defaultVal: "",
-              readOnly: false,
+              fieldUniqeName: "ABCD",
               invalid: false,
               field_type: FieldType.time,
               field_placeholder: "Enter Created Time",
-              validator: [],
-              mandatory: false,
-              hidden: false
+              regex_validation: "",
+              mandatory: false
             },
             {
               field_name: "User Time",
-              fieldUniqeName: "uTime",
-              defaultVal: "",
-              readOnly: false,
+              fieldUniqeName: "ABCD",
               invalid: false,
               field_type: FieldType.dropdown,
               field_placeholder: "Enter User Roles",
-              validator: [],
+              regex_validation: "",
               mandatory: false,
-              hidden: false,
               options: [
                 {
                   optionDisplayName: "Admin",
@@ -128,189 +106,84 @@ export class HomeTabComponent {
           tab_unique_name: "",
           search_fields: [{
             field_name: "Brands Name",
-            fieldUniqeName: "tBrandName",
-            defaultVal: "",
-            readOnly: false,
+            fieldUniqeName: "ABCD",
             invalid: false,
             field_type: FieldType.text,
             field_placeholder: "Enter Brands Name",
-            validator: [],
-            mandatory: false,
-            hidden: false
+            regex_validation: "",
+            mandatory: false
           }],
           fields: [
             {
-              field_name: "Brand Id",
-              fieldUniqeName: "aBrandId",
-              defaultVal: "",
-              readOnly: true,
-              invalid: false,
-              field_type: FieldType.number,
-              field_placeholder: "Enter Brands Id",
-              validator: [],
-              mandatory: false,
-              hidden: false
-            },
-            {
               field_name: "Brands Name",
-              fieldUniqeName: "tBrandName",
-              defaultVal: "",
-              readOnly: false,
+              fieldUniqeName: "ABCD",
               invalid: false,
               field_type: FieldType.text,
               field_placeholder: "Enter Brands Name",
-              validator: [Validators.required],
-              mandatory: false,
-              hidden: false
+              regex_validation: "",
+              mandatory: false
             },
             {
-              field_name: "Brands Description",
-              fieldUniqeName: "tBrandDescription",
-              defaultVal: "",
-              readOnly: false,
+              field_name: "Brands Mobile",
+              fieldUniqeName: "ABCD",
               invalid: false,
               field_type: FieldType.text,
-              field_placeholder: "Enter Brands Description",
-              validator: [],
-              mandatory: false,
-              hidden: false
+              field_placeholder: "Enter Brands mobile",
+              regex_validation: "",
+              mandatory: false
             },
             {
-              field_name: "Brands Website",
-              fieldUniqeName: "tBrandWebsite",
-              defaultVal: "",
-              readOnly: false,
+              field_name: "Brands Email",
+              fieldUniqeName: "ABCD",
               invalid: false,
-              field_type: FieldType.text,
-              field_placeholder: "Enter Brands Website",
-              validator: [],
-              mandatory: false,
-              hidden: false
+              field_type: FieldType.email,
+              field_placeholder: "Enter Brands mail",
+              regex_validation: "",
+              mandatory: false
             },
             {
-              field_name: "Brands Country",
-              fieldUniqeName: "tBrandCountry",
-              defaultVal: "",
-              readOnly: false,
+              field_name: "Brands DOB",
+              fieldUniqeName: "ABCD",
+              invalid: false,
+              field_type: FieldType.date,
+              field_placeholder: "Brands DOB",
+              regex_validation: "",
+              mandatory: false
+            },
+            {
+              field_name: "Brands Created Time",
+              fieldUniqeName: "ABCD",
+              invalid: false,
+              field_type: FieldType.time,
+              field_placeholder: "Brands Created Time",
+              regex_validation: "",
+              mandatory: false
+            },
+            {
+              field_name: "Brands Role",
+              fieldUniqeName: "ABCD",
               invalid: false,
               field_type: FieldType.dropdown,
-              field_placeholder: "Enter Brands Country",
-              validator: [Validators.required],
+              field_placeholder: "Brands User Roles",
+              regex_validation: "",
               mandatory: false,
-              hidden: false,
               options: [
                 {
-                  optionDisplayName: "India",
+                  optionDisplayName: "Admin",
                   optionIndex: 0,
                   optionOrder: 1
                 },
                 {
-                  optionDisplayName: "USA",
+                  optionDisplayName: "User",
                   optionIndex: 1,
                   optionOrder: 2
                 },
                 {
-                  optionDisplayName: "UAE",
+                  optionDisplayName: "Vendor",
                   optionIndex: 2,
                   optionOrder: 3
                 }
               ]
-            },
-            {
-              field_name: "Brands Established",
-              fieldUniqeName: "tBrandEstablished",
-              defaultVal: "",
-              readOnly: false,
-              invalid: false,
-              field_type: FieldType.date,
-              field_placeholder: "Enter Brands Establishment date",
-              validator: [],
-              mandatory: false,
-              hidden: false
-            },
-            {
-              field_name: "Brands Category",
-              fieldUniqeName: "tBrandCategory",
-              defaultVal: "",
-              readOnly: false,
-              invalid: false,
-              field_type: FieldType.text,
-              field_placeholder: "Enter Brands Category",
-              validator: [Validators.required],
-              mandatory: false,
-              hidden: false
-            },
-            {
-              field_name: "Brands Contact",
-              fieldUniqeName: "tBrandContact",
-              defaultVal: "",
-              readOnly: false,
-              invalid: false,
-              field_type: FieldType.text,
-              field_placeholder: "Enter Brands Contact",
-              validator: [],
-              mandatory: false,
-              hidden: false
-            },
-            {
-              field_name: "Brands Attachment Id",
-              fieldUniqeName: "nBrandLogoAttachmentID",
-              defaultVal: "",
-              readOnly: false,
-              invalid: false,
-              field_type: FieldType.number,
-              field_placeholder: "Enter Brands Attachment",
-              validator: [],
-              mandatory: false,
-              hidden: true
-            },
-            {
-              field_name: "Brands Created By",
-              fieldUniqeName: "nCreatedBy",
-              defaultVal: "",
-              readOnly: false,
-              invalid: false,
-              field_type: FieldType.number,
-              field_placeholder: "Enter Brands Created By",
-              validator: [],
-              mandatory: false,
-              hidden: true
-            },
-            {
-              field_name: "Brands Updated by",
-              fieldUniqeName: "nUpdateBy",
-              defaultVal: "",
-              readOnly: false,
-              invalid: false,
-              field_type: FieldType.number,
-              field_placeholder: "Enter Brands Updated by",
-              validator: [],
-              mandatory: false,
-              hidden: true
-            },
-            {
-              field_name: "Brands Created on",
-              fieldUniqeName: "dtCreatedOn",
-              defaultVal: "",
-              readOnly: false,
-              invalid: false,
-              field_type: FieldType.date,
-              field_placeholder: "Enter Brands Created on",
-              validator: [],
-              mandatory: false,
-              hidden: true
-            },
-            {
-              field_name: "Brands Updated on",
-              fieldUniqeName: "dtUpdatedOn",
-              defaultVal: "",
-              readOnly: false,
-              invalid: false,
-              field_type: FieldType.date,
-              field_placeholder: "Enter Brands Updated on",
-              validator: [],
-              mandatory: false,
-              hidden: true
             }
           ]
         },

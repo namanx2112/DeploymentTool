@@ -12,16 +12,16 @@ export class AuthService {
   configUrl: string;
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient,private route:ActivatedRoute, public router: Router) { 
-    this.configUrl = "./api/";
+    this.configUrl = "http://localhost/newprod/api/";
     localStorage.setItem("configUrl", this.configUrl);
   }
 
   public loginUser = (userName: string, userPassword: string) => {
-    return this.http.get<AuthResponse>(this.configUrl + "token/Get?username=cuong&password=1");
+    return this.http.get<AuthResponse>(this.configUrl + "token?username=cuong&password=1");
   }
 
   signIn(user: AuthRequest) {
-    return this.http.post<AuthResponse>(this.configUrl + "token/get", user, {headers: this.headers})
+    return this.http.post<AuthResponse>(this.configUrl + "token", user, {headers: this.headers})
       .subscribe((res: AuthResponse) => {
         localStorage.setItem('access_token', res.Token);
         this.router.navigate(['./home'],{skipLocationChange: true, relativeTo:this.route});
