@@ -122,13 +122,13 @@ namespace DeploymentTool.Controller
                 };
             SqlParameter[] arroutParam = new SqlParameter[1];
                 SqlParameter outParam = new SqlParameter();
-                outParam.ParameterName = "@BrandID";
+                outParam.ParameterName = "@nBrandID";
                 outParam.SqlDbType = SqlDbType.Int;
                 outParam.Direction = ParameterDirection.Output;
                 outParam.Value = 0;
             arroutParam[0] = outParam;
 
-            var result = DBHelper.ExecuteProcedure<Brand>("sp_InsertBrand", reader =>
+            var result = DBHelper.ExecuteProcedure<Brand>("sprocBrandCreate", reader =>
             {
                 return new Brand();
             },ref arroutParam, parameters);

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { HomeTab } from 'src/app/interfaces/home-tab';
 import { Dictionary } from 'src/app/interfaces/commons';
 import { FormGroup } from '@angular/forms';
@@ -12,6 +12,7 @@ import { BrandModel } from 'src/app/interfaces/models';
 })
 export class NewEditObjectComponent {
   @Input() curTab: HomeTab;
+  @Output() returnBack= new EventEmitter<any>()
   curControlVals: Dictionary<string> = {};
   constructor( private brandService: BrandServiceService){
     
@@ -20,6 +21,7 @@ export class NewEditObjectComponent {
   onSubmit(controlVals: FormGroup){
     this.brandService.CreateBrand(controlVals.value).subscribe((resp: BrandModel)=>{
         console.log(resp);
+        this.returnBack.emit(resp);
     })
   }
 }

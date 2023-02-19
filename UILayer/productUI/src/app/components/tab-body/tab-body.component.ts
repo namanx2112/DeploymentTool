@@ -25,4 +25,9 @@ export class TabBodyComponent {
   onSubmit(controlVals: FormGroup){
 
   }
+
+  returnBack(resp: any){
+    alert("Saved");
+    this.secondPart = "table";
+  }
 }

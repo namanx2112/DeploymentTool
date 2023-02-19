@@ -13,6 +13,6 @@
   </div>
   <div class="tablePart">
       <app-table *ngIf="secondPart == 'table'" [curTab]="curTab"></app-table>
-      <app-new-edit-object *ngIf="secondPart == 'newEdit'" [curTab]="curTab"></app-new-edit-object>
+      <app-new-edit-object *ngIf="secondPart == 'newEdit'" [curTab]="curTab" (returnBack)="returnBack($event)"></app-new-edit-object>
   </div>
 </div>

@@ -16,14 +16,10 @@ export class AuthService {
     localStorage.setItem("configUrl", this.configUrl);
   }
 
-  public loginUser = (userName: string, userPassword: string) => {
-    return this.http.get<AuthResponse>(this.configUrl + "token/Get?username=cuong&password=1");
-  }
-
-  signIn(user: AuthRequest) {
+  signIn(user: any) {
     return this.http.post<AuthResponse>(this.configUrl + "token/get", user, {headers: this.headers})
       .subscribe((res: AuthResponse) => {
-        localStorage.setItem('access_token', res.Token);
+        localStorage.setItem('authResponse', JSON.stringify(res));
         this.router.navigate(['./home'],{skipLocationChange: true, relativeTo:this.route});
       });
   }
@@ -34,7 +30,12 @@ export class AuthService {
   }
 
   getToken() {
-    return localStorage.getItem('access_token');
+    let authResp = localStorage.getItem('authResponse');
+    let token = '';
+    if(typeof authResp != 'undefined' && authResp != null && authResp != ''){
+        token = JSON.parse(authResp).auth.Token;
+    }
+    return token;
   }
 
   getConfigUrl(){
