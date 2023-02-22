@@ -195,14 +195,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function LoginComponent_mat_error_11_Template(rf, ctx) {
+function LoginComponent_mat_error_14_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "Please Enter User Name");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
 }
-function LoginComponent_mat_error_17_Template(rf, ctx) {
+function LoginComponent_mat_error_20_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "Please Enter Password");
@@ -236,38 +236,38 @@ LoginComponent.ɵfac = function LoginComponent_Factory(t) {
 LoginComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
   type: LoginComponent,
   selectors: [["app-login"]],
-  decls: 21,
+  decls: 24,
   vars: 4,
-  consts: [[1, "loginOuter"], [1, "loginLeft", "logo"], [1, "loginRight"], [1, "header"], [1, "loginForm", 3, "formGroup", "ngSubmit"], ["appearance", "fill", 1, "curField"], ["matInput", "", "placeholder", "User Name", "type", "text", "formControlName", "UserName", "required", ""], [4, "ngIf"], ["matInput", "", "placeholder", "Password", "type", "password", "formControlName", "Password", "required", ""], ["type", "submit", "mat-raised-button", "", "color", "primary", 1, "button", 3, "disabled"]],
+  consts: [[1, "outerLogin"], [1, "logo"], [1, "outer"], [1, "loginHeader"], [1, "loginControl"], [1, "loginBox"], [1, "loginForm", 3, "formGroup", "ngSubmit"], ["appearance", "outline", 1, "curField"], ["matInput", "", "placeholder", "User Name", "type", "text", "formControlName", "UserName", "required", ""], [4, "ngIf"], ["matInput", "", "placeholder", "Password", "type", "password", "formControlName", "Password", "required", ""], ["type", "submit", "mat-raised-button", "", "color", "primary", 1, "button", 3, "disabled"]],
   template: function LoginComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "div", 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2)(3, "h4", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "Sign In to the Restaurant Technology Deployment Platform");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "form", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngSubmit", function LoginComponent_Template_form_ngSubmit_5_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2)(3, "div", 3)(4, "h1");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "Sign in to Restaurant Technology Deployment Platform");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 4)(7, "div", 5)(8, "form", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngSubmit", function LoginComponent_Template_form_ngSubmit_8_listener() {
         return ctx.logMeIn();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "p")(7, "mat-form-field", 5)(8, "mat-label");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Enter your email");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "p")(10, "mat-form-field", 7)(11, "mat-label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, "Enter your email");
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](10, "input", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](11, LoginComponent_mat_error_11_Template, 2, 0, "mat-error", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](13, "input", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](14, LoginComponent_mat_error_14_Template, 2, 0, "mat-error", 9);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "p")(13, "mat-form-field", 5)(14, "mat-label");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "Enter your password");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "p")(16, "mat-form-field", 7)(17, "mat-label");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](18, "Enter your password");
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](16, "input", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](17, LoginComponent_mat_error_17_Template, 2, 0, "mat-error", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](19, "input", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](20, LoginComponent_mat_error_20_Template, 2, 0, "mat-error", 9);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "p")(19, "button", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](20, "Login");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "p")(22, "button", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23, "Login");
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()()()()();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](8);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.formGroup);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.hasEror("UserName"));
@@ -278,7 +278,7 @@ LoginComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__.MatError, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControlName, _angular_material_input__WEBPACK_IMPORTED_MODULE_5__.MatInput, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton],
-  styles: [".loginOuter[_ngcontent-%COMP%]{\r\n    width: 100%;\r\n    height: 100%;\r\n    float: left;\r\n}\r\n.loginLeft[_ngcontent-%COMP%]{\r\n    width: 50%;\r\n    height: 100%;\r\n    float: left;\r\n}\r\n.loginRight[_ngcontent-%COMP%]{\r\n    width: 50%;\r\n    height: 100%;\r\n    float: left;\r\n}\r\n.loginForm[_ngcontent-%COMP%]{\r\n    width: 100%;\r\n}\r\n.logo[_ngcontent-%COMP%]{\r\n    background-color: gray;\r\n}\r\n.header[_ngcontent-%COMP%]{\r\n    margin-top: 20%;\r\n    float: left;\r\n    width: 90%;\r\n    padding: 10px;\r\n}\r\n.curField[_ngcontent-%COMP%] {\r\n    width: 90%;\r\n    padding: 10px;\r\n    height: 80px;\r\n}\r\n.button[_ngcontent-%COMP%]{\r\n    width: 90%;\r\n    margin: 10px;\r\n}"]
+  styles: ["*[_ngcontent-%COMP%] {\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.outerLogin[_ngcontent-%COMP%] {\r\n    display: flex;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.outerLogin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%] {\r\n    float: left;\r\n    padding: 10px;\r\n}\r\n\r\n.logo[_ngcontent-%COMP%] {\r\n    background-image: url(\"https://inspirebrands.com/wp-content/uploads/2022/12/Inspire-All-Brands.jpg\");\r\n    background-repeat: no-repeat;\r\n    background-size: 100% 100%;\r\n    background-color: #cccccc;\r\n}\r\n\r\n.loginHeader[_ngcontent-%COMP%] {\r\n    float: left;\r\n    height: 30%;\r\n    width: 100%;\r\n    display: flex;\r\n    align-items: baseline;\r\n    text-align: center;\r\n}\r\n\r\n.loginHeader[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\r\n    margin-top: auto;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    font-size: 24px;\r\n}\r\n\r\n\r\n.loginControl[_ngcontent-%COMP%] {\r\n    float: left;\r\n    width: 100%;\r\n    display: flex;\r\n}\r\n\r\n.loginBox[_ngcontent-%COMP%] {\r\n    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01), 0 1px 2px rgba(0, 0, 0, 0.1);\r\n    min-width: 80%;\r\n    min-height: 80%;\r\n    display: flex;\r\n    align-items: center;\r\n    margin: auto;\r\n}\r\n\r\nform[_ngcontent-%COMP%]{\r\n    width: 100%;\r\n}\r\n\r\n@media only screen and (min-width: 100px) and (max-width: 900px) {\r\n\r\n    .outerLogin[_ngcontent-%COMP%] {\r\n        flex-direction: column;\r\n    }\r\n\r\n    .logo[_ngcontent-%COMP%] {\r\n        width: 100%;\r\n        height: 100%;\r\n        margin: auto;\r\n    }\r\n\r\n    .outer[_ngcontent-%COMP%] {\r\n        width: 100%;\r\n        height: 80%;\r\n    }\r\n\r\n    .loginHeader[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\r\n        margin-top: auto;\r\n    }\r\n\r\n    .loginControl[_ngcontent-%COMP%] {\r\n        height: 100%;\r\n    }\r\n}\r\n\r\n@media only screen and (min-width: 901px) {\r\n    .outerLogin[_ngcontent-%COMP%] > div[_ngcontent-%COMP%] {\r\n        height: 100%;\r\n    }\r\n\r\n    .outerLogin[_ngcontent-%COMP%] {\r\n        flex-direction: row;\r\n    }\r\n\r\n    .logo[_ngcontent-%COMP%] {\r\n        width: 50%;\r\n    }\r\n\r\n    .outer[_ngcontent-%COMP%] {\r\n        width: 50%;\r\n    }\r\n\r\n    .loginControl[_ngcontent-%COMP%] {\r\n        height: 70%;\r\n    }\r\n}\r\n\r\n.curField[_ngcontent-%COMP%] {\r\n    width: 90%;\r\n    padding: 10px;\r\n    height: 100px;\r\n    display: flex;\r\n    margin: auto;\r\n}\r\n\r\n.button[_ngcontent-%COMP%] {\r\n    width: 90%;\r\n    margin: 10px;\r\n    display: flex;\r\n    margin: auto;\r\n}\r\n\r\ninput[_ngcontent-%COMP%]{\r\n    background-color: #fff!important;\r\n}"]
 });
 
 /***/ }),
