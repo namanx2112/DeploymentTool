@@ -17,12 +17,14 @@ namespace DeploymentTool.Controller
     public class BrandController : ApiController
     {
 
-        [AllowAnonymous]
+        
         // GET api/<controller>
+        [Authorize]
         [HttpPost]
         [ActionName("GetBrands")]
         public HttpResponseMessage GetBrands([FromBody] Brand inputbrand)
         {
+            var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
             var dal = new BrandDAL();
             var result = dal.GetBrands(inputbrand.nPageSize, inputbrand.nPageNumber);
 
@@ -46,10 +48,17 @@ namespace DeploymentTool.Controller
         [HttpGet]
         public HttpResponseMessage GetbyBrand(int id)
         {
-            var context = HttpContext.Current.Request;
+            var securityContext = (User)HttpContext.Current.Items["SecurityContext"]; ;
+            if (!ModelState.IsValid)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+            if (securityContext == null)
+                throw new HttpRequestValidationException("Exception while creating Security Context");
 
             var brandDAL = new BrandDAL();
             var result = brandDAL.GetBrandById(id);
+
 
             if (result == null)
             {
@@ -69,13 +78,20 @@ namespace DeploymentTool.Controller
         // POST api/<controller>
         public HttpResponseMessage CreateBrand([FromBody] Brand brand)
         {
+            var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
             if (!ModelState.IsValid)
             {
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
+            if (securityContext == null)
+                throw new HttpRequestValidationException("Exception while creating Security Context"); if (!ModelState.IsValid)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+
             int nuserid = 1;
             var brandDAL = new BrandDAL();
-            int brandId = brandDAL.CreateBrand(brand, nuserid);
+            int brandId = brandDAL.CreateBrand(brand, securityContext.nUserID);
             brand.aBrandId = brandId;
 
             return new HttpResponseMessage(HttpStatusCode.OK)
@@ -98,13 +114,16 @@ namespace DeploymentTool.Controller
         // PUT api/<controller>/5
         public HttpResponseMessage Update([FromBody] Brand brand)
         {
-            var context = HttpContext.Current.Request;
+            var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
             if (!ModelState.IsValid)
             {
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
-
+            if (securityContext == null)
+                throw new HttpRequestValidationException("Exception while creating Security Context");
             var brandDAL = new BrandDAL();
+            
+            brand.nUpdateBy = (int)securityContext.nUserID;
             brandDAL.Update(brand);
 
             return new HttpResponseMessage(HttpStatusCode.OK)
@@ -121,12 +140,14 @@ namespace DeploymentTool.Controller
         [Route("api/Brand/delete")]
         public HttpResponseMessage Delete(Brand brand)
         {
-            var context = HttpContext.Current.Request;
+            var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
             if (!ModelState.IsValid)
             {
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
-            int nUserid = 0;
+            if (securityContext == null)
+                throw new HttpRequestValidationException("Exception while creating Security Context");
+            int nUserid = ;
             var brandDAL = new BrandDAL();
             brandDAL.Delete(brand.aBrandId, nUserid);
 
