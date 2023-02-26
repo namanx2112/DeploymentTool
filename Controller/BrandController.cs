@@ -147,7 +147,7 @@ namespace DeploymentTool.Controller
             }
             if (securityContext == null)
                 throw new HttpRequestValidationException("Exception while creating Security Context");
-            int nUserid = ;
+            int nUserid = (int)securityContext.nUserID;
             var brandDAL = new BrandDAL();
             brandDAL.Delete(brand.aBrandId, nUserid);
 
