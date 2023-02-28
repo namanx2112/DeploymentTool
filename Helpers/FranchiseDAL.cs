@@ -47,64 +47,34 @@ namespace DeploymentTool.Helpers
             string connectionString = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
             try
             {
-                //    SqlParameter[] parameters = new SqlParameter[]
-                //    {
-                //    new SqlParameter("@tFranchiseName", franchise.tFranchiseName),
-                //    new SqlParameter("@nBrandID", franchise.nBrandId),
-                //    new SqlParameter("@tFranchiseDescription", franchise.tFranchiseDescription),
-                //    new SqlParameter("@tFranchiseLocation", franchise.tFranchiseLocation),
-                //    new SqlParameter("@dFranchiseEstablished", franchise.dFranchiseEstablished),
-                //    new SqlParameter("@tFranchiseContact", franchise.tFranchiseContact),
-                //    new SqlParameter("@tFranchiseOwner", franchise.tFranchiseOwner),
-                //    new SqlParameter("@tFranchiseEmail", franchise.tFranchiseEmail),
-                //    new SqlParameter("@tFranchisePhone", franchise.tFranchisePhone),
-                //    new SqlParameter("@tFranchiseAddress", franchise.tFranchiseAddress),
-                //    new SqlParameter("@nFranchiseEmployeeCount", franchise.nFranchiseEmployeeCount),
-                //    new SqlParameter("@nFranchiseRevenue", franchise.nFranchiseRevenue),
-                //    new SqlParameter("@nUserID",UserID)
-                //    };
-                //    SqlParameter[] outputParams = new SqlParameter[]
-                //    {
-                //new SqlParameter("@nFranchiseID", SqlDbType.Int)
-                //{
-                //    Direction = ParameterDirection.Output
-                //}
-                //    };
-                //    DBHelper.ExecuteProcedure<Franchise>("sprocFranchiseCreate", reader =>
-                //    {
-                //        franchiseID = reader.GetInt32(0);
-                //        return null;
-                //    }, ref outputParams, parameters);
-                //    franchiseID = (int)outputParams[0].Value;
-
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                SqlParameter[] parameters = new SqlParameter[]
                 {
-                    using (SqlCommand cmd = new SqlCommand("sprocFranchiseCreate", conn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        cmd.Parameters.Add("@tFranchiseName", SqlDbType.NVarChar, 255).Value = franchise.tFranchiseName;
-                        cmd.Parameters.Add("@nBrandID", SqlDbType.Int).Value = franchise.nBrandId;
-                        cmd.Parameters.Add("@tFranchiseDescription", SqlDbType.NVarChar, 255).Value = franchise.tFranchiseDescription;
-                        cmd.Parameters.Add("@tFranchiseLocation", SqlDbType.NVarChar, 255).Value = franchise.tFranchiseLocation;
-                        cmd.Parameters.Add("@dFranchiseEstablished", SqlDbType.DateTime).Value = franchise.dFranchiseEstablished;
-                        cmd.Parameters.Add("@tFranchiseContact", SqlDbType.NVarChar, 255).Value = franchise.tFranchiseContact;
-                        cmd.Parameters.Add("@tFranchiseOwner", SqlDbType.NVarChar, 255).Value = franchise.tFranchiseOwner;
-                        cmd.Parameters.Add("@tFranchiseEmail", SqlDbType.NVarChar, 255).Value = franchise.tFranchiseEmail;
-                        cmd.Parameters.Add("@tFranchisePhone", SqlDbType.NVarChar, 255).Value = franchise.tFranchisePhone;
-                        cmd.Parameters.Add("@tFranchiseAddress", SqlDbType.NVarChar, 255).Value = franchise.tFranchiseAddress;
-                        cmd.Parameters.Add("@nFranchiseEmployeeCount", SqlDbType.Int).Value = franchise.nFranchiseEmployeeCount;
-                        cmd.Parameters.Add("@nFranchiseRevenue", SqlDbType.Int).Value = franchise.nFranchiseRevenue;
-                        cmd.Parameters.Add("@nUserID", SqlDbType.Int).Value = UserID;
-                        cmd.Parameters.Add("@nFranchiseID", SqlDbType.Int).Direction = ParameterDirection.Output;
-
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-
-                        franchiseID = (int)cmd.Parameters["@nFranchiseID"].Value;
-                        return franchiseID;
-                    }
+                    new SqlParameter("@tFranchiseName", franchise.tFranchiseName),
+                    new SqlParameter("@nBrandID", franchise.nBrandId),
+                    new SqlParameter("@tFranchiseDescription", franchise.tFranchiseDescription),
+                    new SqlParameter("@tFranchiseLocation", franchise.tFranchiseLocation),
+                    new SqlParameter("@dFranchiseEstablished", franchise.dFranchiseEstablished),
+                    new SqlParameter("@tFranchiseContact", franchise.tFranchiseContact),
+                    new SqlParameter("@tFranchiseOwner", franchise.tFranchiseOwner),
+                    new SqlParameter("@tFranchiseEmail", franchise.tFranchiseEmail),
+                    new SqlParameter("@tFranchisePhone", franchise.tFranchisePhone),
+                    new SqlParameter("@tFranchiseAddress", franchise.tFranchiseAddress),
+                    new SqlParameter("@nFranchiseEmployeeCount", franchise.nFranchiseEmployeeCount),
+                    new SqlParameter("@nFranchiseRevenue", franchise.nFranchiseRevenue),
+                    new SqlParameter("@nUserID",UserID)
+                };
+                SqlParameter[] outputParams = new SqlParameter[]
+                {
+                new SqlParameter("@nFranchiseID", SqlDbType.Int)
+                {
+                    Direction = ParameterDirection.Output
                 }
+                };
+                
+                DBHelper.ExecuteProcedure("sprocFranchiseCreate", ref outputParams, parameters);
+                franchiseID = (int)outputParams[0].Value;
+
+
             }
             catch (Exception ex)
             {

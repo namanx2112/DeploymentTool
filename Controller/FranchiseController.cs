@@ -47,15 +47,15 @@ namespace DeploymentTool.Controller
         public HttpResponseMessage Delete(Franchise franchise)
         {
             var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
-            //if (!ModelState.IsValid)
-            //{
-            //    return new HttpResponseMessage(HttpStatusCode.BadRequest);
-            //}
-            //if (securityContext == null)
-            //    throw new HttpRequestValidationException("Exception while creating Security Context");
-            //int nUserid = (int)securityContext.nUserID;
+            if (!ModelState.IsValid)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+            if (securityContext == null)
+                throw new HttpRequestValidationException("Exception while creating Security Context");
+            int nUserid = (int)securityContext.nUserID;
             var franchiseDAL = new FranchiseDAL();
-            franchiseDAL.Delete(franchise.aFranchiseId, franchise.nUserID);
+            franchiseDAL.Delete(franchise.aFranchiseId, nUserid);
 
             return new HttpResponseMessage(HttpStatusCode.OK);
 
@@ -94,17 +94,17 @@ namespace DeploymentTool.Controller
         public HttpResponseMessage CreateFranchise([FromBody] Franchise franchise)
         {
             var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
-            //if (!ModelState.IsValid)
-            //{
-            //    return new HttpResponseMessage(HttpStatusCode.BadRequest);
-            //}
-            //if (securityContext == null)
-            //    throw new HttpRequestValidationException("Exception while creating Security Context"); if (!ModelState.IsValid)
-            //{
-            //    return new HttpResponseMessage(HttpStatusCode.BadRequest);
-            //}
+            if (!ModelState.IsValid)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+            if (securityContext == null)
+                throw new HttpRequestValidationException("Exception while creating Security Context"); if (!ModelState.IsValid)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
 
-            
+
             var franchiseDAL = new FranchiseDAL();
             int franchiseID = franchiseDAL.CreateFranchise(franchise, franchise.nUserID);
             franchise.aFranchiseId= franchiseID;
