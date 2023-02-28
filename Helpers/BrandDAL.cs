@@ -11,11 +11,11 @@ namespace DeploymentTool.Helpers
 {
     public class BrandDAL
     {
-        public void Delete(int brandId, int userId)
+        public void Delete(Brand brand, int userId)
         {
             var parameters = new SqlParameter[]
             {
-                new SqlParameter("@nBrandId", brandId),
+                new SqlParameter("@nBrandId", brand.aBrandId),
                 new SqlParameter("@nUserID", userId)
             };
             DBHelper.ExecuteNonQuery("SprocBrandDelete", parameters);
@@ -64,11 +64,13 @@ namespace DeploymentTool.Helpers
                 Direction = ParameterDirection.Output
             }
                 };
-                DBHelper.ExecuteProcedure<Brand>("sprocBrandCreate", reader =>
-                {
-                    brandId = reader.GetInt32(0);
-                    return null;
-                }, ref outputParams, parameters);
+                //DBHelper.ExecuteProcedure<Brand>("sprocBrandCreate", reader =>
+                //{
+                //    brandId = reader.GetInt32(0);
+                //    return null;
+                //}, ref outputParams, parameters);
+                DBHelper.ExecuteProcedure("sprocBrandCreate", ref outputParams, parameters);
+                brandId = (int)outputParams[0].Value;
             }
             catch (Exception ex)
             {
@@ -79,36 +81,26 @@ namespace DeploymentTool.Helpers
 
 
 
-        public Brand GetBrandById(int id)
+        
+        public List<Brand> GetBrands(Brand inputbrand, int nUserID)
         {
-            return DBHelper.ExecuteProcedure<Brand>("sprocBrandGet", reader =>
+            SqlParameter[] parameters = null;
+            if (inputbrand != null)
             {
-                var brand = new Brand();
-                brand.aBrandId = reader["aBrandId"] == null ? -1 : (int)reader["aBrandId"];
-                brand.tBrandName = reader["tBrandName"]?.ToString();
-                brand.tBrandDescription = reader["tBrandDescription"]?.ToString();
-                brand.tBrandWebsite = reader["tBrandWebsite"]?.ToString();
-                brand.tBrandCountry = reader["tBrandCountry"]?.ToString();
-                brand.tBrandEstablished = reader["tBrandEstablished"] is DBNull ? DateTime.MinValue : (DateTime)reader["dtCreatedOn"]; ;
-                brand.tBrandCategory = reader["tBrandCategory"]?.ToString();
-                brand.tBrandContact = reader["tBrandContact"]?.ToString();
-                brand.nBrandLogoAttachmentID = reader["nBrandLogoAttachmentID"] is DBNull ? 0 : (int)reader["nBrandLogoAttachmentID"];
-                brand.nCreatedBy = reader["nCreatedBy"] is DBNull ? 0 : (int)reader["nCreatedBy"];
-                brand.nUpdateBy = reader["nUpdateBy"] is DBNull ? 0 : (int)reader["nUpdateBy"];
-                brand.dtCreatedOn = reader["dtCreatedOn"] is DBNull ? DateTime.MinValue : (DateTime)reader["dtCreatedOn"];
-                brand.dtUpdatedOn = reader["dtUpdatedOn"] is DBNull ? DateTime.MinValue : (DateTime)reader["dtUpdatedOn"];
-                brand.bDeleted = (bool)reader["bDeleted"];
-                return brand;
-            }, new SqlParameter("@BrandId", id));
-        }
-        public List<Brand> GetBrands(int pageSize, int pageNumber)
-        {
-            var parameters = new SqlParameter[]
+                parameters  = new SqlParameter[]
+                {
+
+                new SqlParameter("@tBrandName", inputbrand.tBrandName),
+                new SqlParameter("@nUserID", nUserID),
+                new SqlParameter("@nPageSize", inputbrand.nPageSize),
+                new SqlParameter("@nPageNumber", inputbrand.nPageNumber),
+                new SqlParameter("@aBrandId", inputbrand.aBrandId)
+                };
+            }
+            else
             {
-            new SqlParameter("@nUserID", ""),
-            new SqlParameter("@nPageSize", pageSize),
-            new SqlParameter("@nPageNumber", pageNumber)
-            };
+                 parameters = new SqlParameter[] { new SqlParameter("@nUserID", nUserID) };
+            }
 
             return DBHelper.ExecuteProcedure<List<Brand>>("sprocBrandGet", reader =>
             {
@@ -119,6 +111,7 @@ namespace DeploymentTool.Helpers
                     var brand = new Brand();
 
                     brand.aBrandId = reader["aBrandId"] == null ? -1 : (int)reader["aBrandId"];
+                    brand.nTotalCount = reader["nTotalCount"] == null ? -1 : (int)reader["nTotalCount"];
                     brand.tBrandName = reader["tBrandName"]?.ToString();
                     brand.tBrandDescription = reader["tBrandDescription"]?.ToString();
                     brand.tBrandWebsite = reader["tBrandWebsite"]?.ToString();
@@ -132,7 +125,6 @@ namespace DeploymentTool.Helpers
                     brand.dtCreatedOn = reader["dtCreatedOn"] is DBNull ? DateTime.MinValue : (DateTime)reader["dtCreatedOn"];
                     brand.dtUpdatedOn = reader["dtUpdatedOn"] is DBNull ? DateTime.MinValue : (DateTime)reader["dtUpdatedOn"];
                     brand.bDeleted = (bool)reader["bDeleted"];
-
                     brands.Add(brand);
                 }
 

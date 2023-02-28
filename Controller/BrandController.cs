@@ -26,7 +26,7 @@ namespace DeploymentTool.Controller
         {
             var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
             var dal = new BrandDAL();
-            var result = dal.GetBrands(inputbrand.nPageSize, inputbrand.nPageNumber);
+            var result = dal.GetBrands(inputbrand,(int)securityContext.nUserID);
 
             if (result == null)
             {
@@ -42,39 +42,10 @@ namespace DeploymentTool.Controller
         }
 
 
-        [AllowAnonymous]
-        // GET api/<controller>/5
-        [ActionName("{GetbyBrand}")]
-        [HttpGet]
-        public HttpResponseMessage GetbyBrand(int id)
-        {
-            var securityContext = (User)HttpContext.Current.Items["SecurityContext"]; ;
-            if (!ModelState.IsValid)
-            {
-                return new HttpResponseMessage(HttpStatusCode.BadRequest);
-            }
-            if (securityContext == null)
-                throw new HttpRequestValidationException("Exception while creating Security Context");
-
-            var brandDAL = new BrandDAL();
-            var result = brandDAL.GetBrandById(id);
-
-
-            if (result == null)
-            {
-                return new HttpResponseMessage(HttpStatusCode.NoContent);
-            }
-            else
-            {
-                return new HttpResponseMessage(HttpStatusCode.OK)
-                {
-                    Content = new ObjectContent<Brand>(result, new JsonMediaTypeFormatter())
-                };
-            }
-        }
+       
         [Authorize]
         [HttpPost]
-        [Route("api/Brand/CreateBrand")]
+        [ActionName("CreateBrand")]
         // POST api/<controller>
         public HttpResponseMessage CreateBrand([FromBody] Brand brand)
         {
@@ -149,7 +120,7 @@ namespace DeploymentTool.Controller
                 throw new HttpRequestValidationException("Exception while creating Security Context");
             int nUserid = (int)securityContext.nUserID;
             var brandDAL = new BrandDAL();
-            brandDAL.Delete(brand.aBrandId, nUserid);
+            brandDAL.Delete(brand, nUserid);
 
             return new HttpResponseMessage(HttpStatusCode.OK);
 

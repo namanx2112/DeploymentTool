@@ -12,10 +12,10 @@ namespace DeploymentTool.Controller
 {
     public class TokenController : ApiController
     {
-
-        [HttpPost]
         [AllowAnonymous]
+        [HttpPost]        
         [Route("api/Token/Get")]
+        
         public HttpResponseMessage Get(UserForAuthentication request)
         {
             var user = CheckUser(request.UserName, request.Password);
@@ -34,9 +34,7 @@ namespace DeploymentTool.Controller
             User objUser = new User();
             objUser.userName = username;
             objUser.password = password;
-            //DBHelper.login(ref objUser);
-            objUser.nRoleType = "1";
-            objUser.nUserID = 1;
+            DBHelper.login(ref objUser);          
             return objUser;           
 
         }
