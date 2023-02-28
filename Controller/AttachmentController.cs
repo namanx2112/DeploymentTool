@@ -67,7 +67,7 @@ namespace DeploymentTool.Controller
 
                 var attachment = new Attachment
                 {
-                    AttachmentId = 3,
+                    AttachmentId = Convert.ToInt32(httpRequest.Form["AttachmentId"]) ,
                     FileName = httpRequest.Form["tfileName"],
                     FileExt = httpRequest.Form["tFileExt"],
                     FileType = httpRequest.Form["tfileType"],
@@ -94,15 +94,16 @@ namespace DeploymentTool.Controller
         }
 
 
-        [HttpDelete]
+        [HttpPost]
         [Route("api/Attachment/DeleteAttachment/{attachmentId}")]
-        public IHttpActionResult DeleteAttachment(int attachmentId)
+        public IHttpActionResult DeleteAttachment([FromBody] dynamic attachmentId)
         {
             try
             {
+                int nattachmentid = attachmentId.ID;
                 var userId = 1; // replace with actual user ID
 
-                _attachmentRepository.DeleteAttachment(attachmentId, userId);
+                _attachmentRepository.DeleteAttachment(nattachmentid, userId);
 
                 return Ok(new { Message = "Attachment deleted successfully." });
             }
@@ -131,13 +132,15 @@ namespace DeploymentTool.Controller
 
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("api/Attachment/GetAttachmentBlob/{attachmentId}/{userId}")]
-        public IHttpActionResult GetAttachmentBlob(int attachmentId, int userId)
+        public IHttpActionResult GetAttachmentBlob([FromBody] dynamic attachmentId)
         {
             try
             {
-                Attachment attachment = _attachmentRepository.GetAttachmentBlob(attachmentId, userId);
+                int nattachmentid = attachmentId.ID;
+                int userId = 1;
+                Attachment attachment = _attachmentRepository.GetAttachmentBlob(nattachmentid, userId);
 
                 if (attachment == null)
                 {
