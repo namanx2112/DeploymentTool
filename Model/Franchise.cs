@@ -26,5 +26,8 @@ namespace DeploymentTool.Model
         public DateTime dtCreatedOn { get; set; }
         public DateTime dtUpdatedOn { get; set; }
         public bool bDeleted { get; set; }
+        public int nPageSize { get; set; }
+        public int nPageNumber { get; set; }
+        public int nTotalCount { get; set; }
     }
 }
