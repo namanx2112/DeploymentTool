@@ -1,416 +1,142 @@
-/*!
- * Author:Chandradhar S G
- * Bangalore,India
- * Date: 3-2-2017
- */
- body {
-    background-color: #f3f3f3;
-    _background: url(/src/assets/images/offerImages/header-bg.png);
-    font-family: Arial;
-    font-size: 12px;
+*:not(.mat-icon) {
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
 }
 
-.text-bold {
-    font-weight: bold;
+.outerLayout {
+    float: left;
+    width: 100%;
+    height: 100%;
 }
 
-pre {
-    overflow: hidden;
+.floatLeft {
+    float: left;
 }
 
-div {
-    _border: 1px solid silver;
+.left {
+    width: 80px;
+    height: 100%;
+    background-color: gray;
 }
 
-.dress {
-    max-height: 200px;
-    width: auto;
+.right {
+    display: block;
+    width: calc(100% - 80px);
+    height: 100%;
 }
 
-.slidebg {
-    _background: #D62225;
-    _background: #f5f5f5;
-    padding-top: 20px;
-    _margin-left: -15px;
-}
-
-.offerimg {
-    margin-top: 30%;
+.logo {
+    height: 60px;
     width: 100%;
 }
 
-.arrowmark {
-    _background: white;
-    padding: 0px;
-    width: 20px;
-}
-
-.imgBox {
-    border: 1px solid silver;
-    text-align: center;
-}
-
-/*---------------------------------right nav bar-----------------------------------------------*/
-.settings {
-    height: auto;
-    color: White;
-    padding: 5px;
-    border-top-left-radius: 20%;
-    border-bottom-left-radius: 20%;
-    position: fixed;
-    z-index: 1;
-    top: 25%;
-    right: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 10px;
-    font-size: 20px;
-}
-
-.settingCog {
-    transition: 1s;
-}
-
-    .settingCog:hover {
-        transform: rotate(360deg);
-    }
-
-.closebtn1 {
-    display: none;
-    height: auto;
-    font-size: 20px;
-    color: White;
-    padding: 5px;
-    border-top-left-radius: 20%;
-    border-bottom-left-radius: 20%;
-    position: fixed;
-    z-index: 1;
-    top: 25%;
-    right: 0px;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 10px;
-}
-
-.sidenav {
-    height: 290px;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 25%;
-    right: 0;
-    background-color: #111;
-    overflow: hidden;
-    transition: 0.5s;
-    padding: 20px 0px;
-}
-
-    .sidenav a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 12px;
-        color: white;
-        display: block;
-        transition: 0.3s;
-        font-weight: bold;
-    }
-
-        .sidenav a:hover, .offcanvas a:focus {
-            color: #f1f1f1;
-            font-size: 12px;
-        }
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-
-        .sidenav a {
-            font-size: 18px;
-        }
-}
-
-/*---------------------------------/right nav bar-----------------------------------------------*/
-.item-header {
-    background: #444;
-    padding: 10px;
+.header {
+    height: 60px;
     width: 100%;
-    font-size: 15px;
-    font-variant: small-caps;
-    color: White;
-    font-weight: bold;
+    overflow: hidden;
 }
 
-.footer {
-    background: #444;
-    padding: 5px;
-    color: #aaaaaa;
-    font-size: 12px;
+.mainBody {
+    height: calc(100% - 60px);
+    width: 100%;
+    overflow: auto;
 }
 
-.copyright {
-    background: #333333;
-    padding-top: 15px;
-    color: #aaaaaa;
+.toolBar {
+    width: 100%;
+    height: calc(100% - 60px);
 }
 
-.popupimg {
-    height: 250px;
+.leftPart {
+    width: 60%;
+    overflow: auto;
 }
 
-.full-height {
-    min-height: 320px;
+.rightPart {
+    width: 40%;
+    overflow: auto;
 }
 
-.desc td {
-    padding: 5px 0px;
-    word-wrap: break-word;
+.leftHeader {
+    float: left;
+    padding: 10px 0px 0px 20px;
 }
 
-.white {
-    color: white;
+.topHeaderTitle{
+    font-size: 16px;
+    font-weight: bold;      
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-.more {
-    font-size: 14px;
+.header {
+    background-color: #E8E8E8;
 }
 
-.row {
-    margin-bottom: 20px;
+.rightHeader {
+    float: right;
 }
 
-h5 {
-    font-weight: bold;
-}
-
-.pr-0 {
-    padding-right: 0px;
-}
-
-.pl-0 {
-    padding-left: 0px;
-}
-.containerTab{
-    height: calc(100% - 325px);
-}
-.tab-content {
-    padding: 15px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    min-height: 100px;
-}
-
-.modal-header {
-    background-image: url(/src/assets/images/offerImages/header-bg.png);
-    background-color: red;
+#header_logo{
+    width: 65px;
+    margin: 15px auto;
+    display: block;
     color: #fff;
 }
 
-.modal-title {
-    font-weight: bold;
-}
-
-@media only screen and (max-width: 420px) {
-    .dress, .popupimg {
-        height: 120px
-    }
-}
-
-
-
-/** Let tabls-left class be available in bootstrap 3.3.7 - I **/
-.tabs-left > .nav-tabs {
-    border-bottom: 0;
-  }
-  
-  .tab-content > .tab-pane {
-    display: none;
-  }
-  
-  .tab-content > .active {
+.action {
     display: block;
-  }
-  
-  .tabs-left > .nav-tabs > li {
-    float: none;
-  }
-  
-  .tabs-left > .nav-tabs > li > a,
-  .tabs-left > .nav-tabs > li > div {
-    margin-right: 0;
-    margin-bottom: 3px;
-  }
-  
-  .tabs-left > .nav-tabs {
-    float: left;
-    margin-right: 19px;
-    border-right: 1px solid #ddd;
-  }
-  
-  .tabs-left > .nav-tabs > li > a,
-  .tabs-left > .nav-tabs > li > div {
-    margin-right: -1px;
-    -webkit-border-radius: 4px 0 0 4px;
-       -moz-border-radius: 4px 0 0 4px;
-            border-radius: 4px 0 0 4px;
-  }
-  
-  .tabs-left > .nav-tabs > li > a:hover,
-  .tabs-left > .nav-tabs > li > a:focus,
-  .tabs-left > .nav-tabs > li > div:hover,
-  .tabs-left > .nav-tabs > li > div:focus{
-    border-color: #eeeeee #dddddd #eeeeee #eeeeee;
-    background-color: #eeeeee;
-  }
-  
-  .tabs-left > .nav-tabs .active > a,
-  .tabs-left > .nav-tabs .active > a:hover,
-  .tabs-left > .nav-tabs .active > a:focus,
-  .tabs-left > .nav-tabs .active > div,
-  .tabs-left > .nav-tabs .active > div:hover,
-  .tabs-left > .nav-tabs .active > div:focus{
-    border-color: #ddd transparent #ddd #ddd;
-    *border-right-color: #ffffff;
-  }
-  /** Let tabls-left class be available in bootstrap 3.3.7 - F **/
-  
-  .account-type
-  {
-      font-family: 'Roboto', sans-serif;
-      color: #A0AEB6;
-      font-size: 1.3em;
-      font-weight: bold;
-      line-height: 18px;
-  }
-  
-  .account-amount
-  {
-      font-family: 'Roboto', sans-serif;
-      color: #A0AEB6;
-      font-size: 1.1em;
-      line-height: 16px;
-  }
-  
-  .account-link
-  {
-      font-family: 'Roboto', sans-serif;
-      font-size: 0.85em;
-      /*line-height: 1em;*/
-  }
-  
-  /* TABS */
-  .tabs-left > .nav-tabs{
-      margin-right:0px;
-      padding: 0;
-      height: 100%; /* 700px - Debe ser el mismo height que el que tenga .tab-content */
-  }
-  
-  /* CONTENIDO DE LOS TABS */
-  .tab-content {
-      background-color: #FFFFFF;
-      border:solid 1px #DCE1E5;
-      border-left-style: none;
-      height: 100%;
-      margin-bottom: 15px;
-      min-height: 590px;
-      border-radius: 0px 4px 4px 4px;
-      -moz-border-radius: 0px 4px 4px 4px;
-      -webkit-border-radius: 0px 4px 4px 4px;
-      
-      -webkit-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.05);
-      -moz-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.05);
-      box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.05);
-  }
-  
-  /* .tab-content > div {
-      margin-top: 26px;
-  } */
-  
-  /* Formato del tab activo */
-  .tabs-left > .nav-tabs .active > a, 
-  .tabs-left > .nav-tabs .active > a:hover, 
-  .tabs-left > .nav-tabs .active > a:focus,
-  
-  .tabs-left > .nav-tabs .active div, 
-  .tabs-left > .nav-tabs .active div:hover, 
-  .tabs-left > .nav-tabs .active div:focus
-  {
-      background-color: #FFFFFF;
-      
-      border-bottom-style: none;
-      border-left-style: none;
-      
-      /*border-bottom: 1px solid #DCE1E5;*/
-      /*border-left: 1px solid #DCE1E5;*/
-      border-bottom-left-radius: 0px;
-      border-right-style: none;
-      
-      margin-right: -1px;
-      
-      -webkit-box-shadow: -4px 0px 18px -1px rgba(0,0,0,0.05);
-      -moz-box-shadow: -4px 0px 18px -1px rgba(0,0,0,0.05);
-      box-shadow: -4px 0px 18px -1px rgba(0,0,0,0.05);
-  }
-  
-  /* Formato de los tabs en general */
-  .tabs-left > .nav-tabs > li:nth-child(1) > a,
-  .tabs-left > .nav-tabs > li:nth-child(1) > a:hover,
-  .tabs-left > .nav-tabs > li:nth-child(1) > a:focus,
-  
-  .tabs-left > .nav-tabs > li:nth-child(1) > div,
-  .tabs-left > .nav-tabs > li:nth-child(1) > div:hover,
-  .tabs-left > .nav-tabs > li:nth-child(1) > div:focus 
-  {
-      cursor: pointer;
-      border-top-left-radius: 4px;
-  }
-  
-  .tabs-left > .nav-tabs > li.active:nth-child(1) > a,
-  .tabs-left > .nav-tabs > li.active:nth-child(1) > a:hover,
-  .tabs-left > .nav-tabs > li.active:nth-child(1) > a:focus,
-  
-  .tabs-left > .nav-tabs > li.active:nth-child(1) > div,
-  .tabs-left > .nav-tabs > li.active:nth-child(1) > div:hover,
-  .tabs-left > .nav-tabs > li.active:nth-child(1) > div:focus 
-  {
-      border-top-left-radius: 4px;
-      border-bottom-style: none;
-      border-left: 1px solid #DCE1E5;
-  }
-  
-  .tabs-left > .nav-tabs > li > a, 
-  .tabs-left > .nav-tabs > li > div {
-      /*display:block;*/
-      /*display: table;*/
-      /*border: solid 1px transparent;*/
-      margin-right: -1px;
-      margin-bottom: -1px;
-      border:solid 1px #DCE1E5;
-      border-radius: 0px;
-  }
-  
-  /* Style of the div element acting as tab content */
-  .tabbable.tabs-left > .nav-tabs > li > div > div {
-      display:block;
-      width: 100%;
-      padding: 1em;
-      min-height: 6em;
-  }
-  
-  /** For elements on the same line that jump down - I */
-  @media (max-width: 767px) {
-      .mt-20 {
-          margin-top:20px;
-      }
-      
-      .tab-content {
-          border-left-style: solid;
-                  border-radius: 4px 4px 4px 4px;
-             -moz-border-radius: 4px 4px 4px 4px;
-          -webkit-border-radius: 4px 4px 4px 4px;
-      }
-  }
-  /** For elements on the same line that jump down - F */
+    width: 28px;
+    border-radius: 5px;   
+    background-color: #696969;
+    padding: 10px;
+    margin: 10px 15px;
+    cursor: pointer;
+}
+
+.action .mat-icon{
+    color: #fff;
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+}
+
+.chips {
+    min-height: 50px;
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: #E8E8E8;
+}
+
+.chipsHeader {
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    height: 40px;
+}
+
+.whiteBG{
+    background-color: #fff;
+}
+.chipsBody {
+    width: 100%;    
+    width: 100%;
+    min-height: 10px;
+}
+
+.brands{
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+    display: inline-block;
+    background-color: #fff;
+    cursor: pointer;
+}
+.brands img{
+    width: 80px;
+    height: 80px;
+}

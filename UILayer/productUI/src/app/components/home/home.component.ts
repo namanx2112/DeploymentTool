@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BrandModel } from 'src/app/interfaces/models';
+import { BrandServiceService } from 'src/app/services/brand-service.service';
 import { HomeService } from 'src/app/services/home.service';
 
 @Component({
@@ -7,14 +9,18 @@ import { HomeService } from 'src/app/services/home.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
-  constructor(private homeService: HomeService){
-
+  brands: BrandModel[];
+  constructor(private homeService: HomeService, private brandService: BrandServiceService) {
+    this.getBrands();
   }
 
-  getValue(){
-      this.homeService.loginGet().subscribe((res: string) => {
-          alert(res);
-      });
+  getValue() {
+    this.homeService.loginGet().subscribe((res: string) => {
+      alert(res);
+    });
+  }
+
+  getBrands() {
+    this.brands = this.brandService.GetAllBrands();
   }
 }
