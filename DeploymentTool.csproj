@@ -918,6 +918,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\BrandDAL.cs" />
     <Compile Include="Helpers\DBHelper.cs" />
     <Compile Include="Model\Brand.cs" />
     <Compile Include="Model\Params.cs" />
@@ -1365,9 +1366,7 @@
     <TypeScriptCompile Include="UILayer\productUI\src\app\services\home.service.ts" />
     <TypeScriptCompile Include="UILayer\productUI\src\main.ts" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

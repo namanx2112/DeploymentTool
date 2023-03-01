@@ -6,6 +6,8 @@ using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.Filters;
+using DeploymentTool.Model;
+using System.Web;
 
 namespace DeploymentTool.Jwt.Filters
 {
@@ -38,9 +40,9 @@ namespace DeploymentTool.Jwt.Filters
                 context.Principal = principal;
         }
 
-        private static bool ValidateToken(string token, out string username)
+        private static bool ValidateToken(string token, out User objUser)
         {
-            username = null;
+            objUser = null;
 
             var simplePrinciple = JwtManager.GetPrincipal(token);
             var identity = simplePrinciple?.Identity as ClaimsIdentity;
@@ -50,12 +52,17 @@ namespace DeploymentTool.Jwt.Filters
 
             if (!identity.IsAuthenticated)
                 return false;
-
+            objUser = new User();
             var usernameClaim = identity.FindFirst(ClaimTypes.Name);
-            username = usernameClaim?.Value;
+            objUser.userName = usernameClaim?.Value;
+            var roleClaim = identity.FindFirst(ClaimTypes.Role);
+            objUser.nRoleType = roleClaim?.Value;
+            var NameIdentifierClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
+            objUser.nUserID = Convert.ToInt32(NameIdentifierClaim?.Value);
 
-            if (string.IsNullOrEmpty(username))
+            if (objUser.nUserID == -1)
                 return false;
+            HttpContext.Current.Items["SecurityContext"] = objUser;
 
             // More validate to check whether username exists in system
 
@@ -64,12 +71,14 @@ namespace DeploymentTool.Jwt.Filters
 
         protected Task<IPrincipal> AuthenticateJwtToken(string token)
         {
-            if (ValidateToken(token, out var username))
+            if (ValidateToken(token, out User objUser))
             {
                 // based on username to get more information from database in order to build local identity
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, username)
+                    new Claim(ClaimTypes.Name, objUser.userName),
+                    new Claim(ClaimTypes.Role, objUser.nRoleType),
+                    new Claim(ClaimTypes.NameIdentifier, Convert.ToString(objUser.nUserID))
                     // Add more claims if needed: Roles, ...
                 };
 

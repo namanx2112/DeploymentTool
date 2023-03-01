@@ -42,7 +42,28 @@ namespace DeploymentTool
             }
         }
 
+        public static int ExecuteProcedure(string procedureName, ref SqlParameter[] outParams, params SqlParameter[] parameters)
+        {
+            using (var conn = new SqlConnection(defaultConnectionString))
+            {
+                conn.Open();
+                using (var cmd = new SqlCommand(procedureName, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddRange(parameters);
+                    cmd.Parameters.AddRange(outParams);
 
+                    cmd.ExecuteNonQuery();
+
+                    foreach (var outParam in outParams)
+                    {
+                        outParam.Value = cmd.Parameters[outParam.ParameterName].Value;
+                    }
+
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
 
 
         public static T ExecuteProcedure<T>(string procedureName, Func<SqlDataReader, T> mapFunc, ref SqlParameter[] outParam, params SqlParameter[] parameters)

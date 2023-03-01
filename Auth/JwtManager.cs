@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using DeploymentTool.Model;
 
 namespace DeploymentTool.Auth
 {
@@ -13,7 +14,7 @@ namespace DeploymentTool.Auth
     {
         private const string Secret = "db3OIsj+BXE9NZDy0t8W3TcNekrF+2d/1sFnWG4HnV8TZY30iTOdtVWJG8abWvB1GlOgJuQZdcF2Luqm/hccMw==";
 
-        public static AuthResponse GenerateToken(string username, int expireMinutes = 20)
+        public static AuthResponse GenerateToken( User objUser, int expireMinutes = 20)
         {
             var symmetricKey = Convert.FromBase64String(Secret);
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -24,11 +25,14 @@ namespace DeploymentTool.Auth
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-            new Claim(ClaimTypes.Name, username)
+            new Claim(ClaimTypes.Name, objUser.userName),
+            new Claim(ClaimTypes.Role, objUser.nRoleType),
+            new Claim(ClaimTypes.NameIdentifier, objUser.nUserID.ToString())
+            
         }),
 
                 Expires = now.AddMinutes(Convert.ToInt32(expireMinutes)),
-
+                
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(symmetricKey),
                     SecurityAlgorithms.HmacSha256Signature)

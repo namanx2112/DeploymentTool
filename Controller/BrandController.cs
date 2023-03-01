@@ -10,42 +10,23 @@ using System.Web.Http;
 using DeploymentTool.Model;
 using System.IdentityModel.Tokens.Jwt;
 using System.Web;
+using DeploymentTool.Helpers;
 
 namespace DeploymentTool.Controller
 {
     public class BrandController : ApiController
     {
+
         
-        [AllowAnonymous]
         // GET api/<controller>
-        [HttpGet]
+        [Authorize]
+        [HttpPost]
         [ActionName("GetBrands")]
-        public HttpResponseMessage GetBrands()
+        public HttpResponseMessage GetBrands([FromBody] Brand inputbrand)
         {
-            var result = DBHelper.ExecuteProcedure<List<Brand>>("sprocBrandGet", reader =>
-            {
-                var brands = new List<Brand>();
-                while (reader.Read())
-                {
-                    var brand = new Brand();
-                    brand.aBrandId = reader["aBrandId"] == null ? -1 : (int)reader["aBrandId"];
-                    brand.tBrandName = reader["tBrandName"].ToString();
-                    brand.tBrandDescription = reader["tBrandDescription"].ToString();
-                    brand.tBrandWebsite = reader["tBrandWebsite"].ToString();
-                    brand.tBrandCountry = reader["tBrandCountry"].ToString();
-                    brand.tBrandEstablished = (DateTime)reader["tBrandEstablished"];
-                    brand.tBrandCategory = reader["tBrandCategory"].ToString();
-                    brand.tBrandContact = reader["tBrandContact"].ToString();
-                    brand.nBrandLogoAttachmentID = (int)reader["nBrandLogoAttachmentID"];
-                    brand.nCreatedBy = (int)reader["nCreatedBy"];
-                    brand.nUpdateBy = (int)reader["nUpdateBy"];
-                    brand.dtCreatedOn = (DateTime)reader["dtCreatedOn"];
-                    brand.dtUpdatedOn = (DateTime)reader["dtUpdatedOn"];
-                    brand.bDeleted = (bool)reader["bDeleted"];
-                    brands.Add(brand);
-                }
-                return brands;
-            });
+            var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
+            var dal = new BrandDAL();
+            var result = dal.GetBrands(inputbrand,(int)securityContext.nUserID);
 
             if (result == null)
             {
@@ -61,108 +42,61 @@ namespace DeploymentTool.Controller
         }
 
 
-        [AllowAnonymous]
-        // GET api/<controller>/5
-        [ActionName("{GetbyBrand}")]
-        [HttpGet]
-        public HttpResponseMessage GetbyBrand(int id)
-        {
-            var context = HttpContext.Current.Request;
-            var result = DBHelper.ExecuteProcedure<Brand>("sprocBrandGet", reader =>
-            {
-                var brand = new Brand();
-                brand.aBrandId = (int)reader["aBrandId"];
-                brand.tBrandName = reader["tBrandName"].ToString();
-                brand.tBrandDescription = reader["tBrandDescription"].ToString();
-                brand.tBrandWebsite = reader["tBrandWebsite"].ToString();
-                brand.tBrandCountry = reader["tBrandCountry"].ToString();
-                brand.tBrandEstablished = (DateTime)reader["tBrandEstablished"];
-                brand.tBrandCategory = reader["tBrandCategory"].ToString();
-                brand.tBrandContact = reader["tBrandContact"].ToString();
-                brand.nBrandLogoAttachmentID = (int)reader["nBrandLogoAttachmentID"];
-                brand.nCreatedBy = (int)reader["nCreatedBy"];
-                brand.nUpdateBy = (int)reader["nUpdateBy"];
-                brand.dtCreatedOn = (DateTime)reader["dtCreatedOn"];
-                brand.dtUpdatedOn = (DateTime)reader["dtUpdatedOn"];
-                brand.bDeleted = (bool)reader["bDeleted"];
-                return brand;
-            }, new SqlParameter("@BrandId", id));
-
-            if (result == null)
-            {
-                return new HttpResponseMessage(HttpStatusCode.NoContent);
-            }
-            else
-            {
-                return new HttpResponseMessage(HttpStatusCode.OK)
-                {
-                    Content = new ObjectContent<Brand>(result, new JsonMediaTypeFormatter())
-                };
-            }
-        }
+       
         [Authorize]
         [HttpPost]
-        [Route("api/Brand/create")]
+        [ActionName("CreateBrand")]
         // POST api/<controller>
         public HttpResponseMessage CreateBrand([FromBody] Brand brand)
         {
-
-          
-            var parameters = new SqlParameter[]
-                {
-                    new SqlParameter("@tBrandName", brand.tBrandName),
-                    new SqlParameter("@tBrandDescription", brand.tBrandDescription),
-                    new SqlParameter("@tBrandWebsite", brand.tBrandWebsite),
-                    new SqlParameter("@tBrandCountry", brand.tBrandCountry),
-                    new SqlParameter("@tBrandEstablished", brand.tBrandEstablished),
-                    new SqlParameter("@tBrandCategory", brand.tBrandCategory),
-                    new SqlParameter("@tBrandContact", brand.tBrandContact),
-                    new SqlParameter("@nBrandLogoAttachmentID", brand.nBrandLogoAttachmentID),
-                    new SqlParameter("@nUserId","")
-                };
-            SqlParameter[] arroutParam = new SqlParameter[1];
-                SqlParameter outParam = new SqlParameter();
-                outParam.ParameterName = "@nBrandID";
-                outParam.SqlDbType = SqlDbType.Int;
-                outParam.Direction = ParameterDirection.Output;
-                outParam.Value = 0;
-            arroutParam[0] = outParam;
-
-            var result = DBHelper.ExecuteProcedure<Brand>("sprocBrandCreate", reader =>
+            var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
+            if (!ModelState.IsValid)
             {
-                return new Brand();
-            },ref arroutParam, parameters);
-            brand.aBrandId  = (int)arroutParam[0].Value;
-            
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+            if (securityContext == null)
+                throw new HttpRequestValidationException("Exception while creating Security Context"); if (!ModelState.IsValid)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+
+            int nuserid = 1;
+            var brandDAL = new BrandDAL();
+            int brandId = brandDAL.CreateBrand(brand, securityContext.nUserID);
+            brand.aBrandId = brandId;
+
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new ObjectContent<Brand>(brand, new JsonMediaTypeFormatter())
             };
-
         }
-        [AllowAnonymous]
+
+
+
+
+
+
+
+
+
+        [Authorize]
         [HttpPost]
         [Route("api/Brand/update")]
         // PUT api/<controller>/5
         public HttpResponseMessage Update([FromBody] Brand brand)
         {
-            var parameters = new SqlParameter[]
-                {
-                    new SqlParameter("@tBrandName", brand.tBrandName),
-                    new SqlParameter("@tBrandDescription", brand.tBrandDescription),
-                    new SqlParameter("@tBrandWebsite", brand.tBrandWebsite),
-                    new SqlParameter("@tBrandCountry", brand.tBrandCountry),
-                    new SqlParameter("@tBrandEstablished", brand.tBrandEstablished),
-                    new SqlParameter("@tBrandCategory", brand.tBrandCategory),
-                    new SqlParameter("@tBrandContact", brand.tBrandContact),
-                    new SqlParameter("@nBrandLogoAttachmentID", brand.nBrandLogoAttachmentID),
-                    new SqlParameter("@nCreatedBy", brand.nCreatedBy),
-                    new SqlParameter("@nUpdateBy", brand.nUpdateBy),
-                    new SqlParameter("@dtCreatedOn", brand.dtCreatedOn),
-                    new SqlParameter("@dtUpdatedOn", brand.dtUpdatedOn),
-                    new SqlParameter("@bDeleted", brand.bDeleted)
-                };
-            DBHelper.ExecuteNonQuery("sprocBrandUpdate", parameters);
+            var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
+            if (!ModelState.IsValid)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+            if (securityContext == null)
+                throw new HttpRequestValidationException("Exception while creating Security Context");
+            var brandDAL = new BrandDAL();
+            
+            brand.nUpdateBy = (int)securityContext.nUserID;
+            brandDAL.Update(brand);
+
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new ObjectContent<Brand>(brand, new JsonMediaTypeFormatter())
@@ -171,22 +105,24 @@ namespace DeploymentTool.Controller
         }
 
         // DELETE api/<controller>/5
-       
-        [AllowAnonymous]
+
+        [Authorize]
         [HttpPost]
         [Route("api/Brand/delete")]
         public HttpResponseMessage Delete(Brand brand)
         {
-            var parameters = new SqlParameter[]
-               {
-                    new SqlParameter("@nBrandId", brand.aBrandId),
-                    new SqlParameter("@nUserID", User.Identity)
-               };
-            DBHelper.ExecuteNonQuery("SprocBrandDelete", parameters);
-            return new HttpResponseMessage(HttpStatusCode.OK)
+            var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
+            if (!ModelState.IsValid)
             {
-                Content = new ObjectContent<Brand>(new Brand(), new JsonMediaTypeFormatter())
-            };
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+            if (securityContext == null)
+                throw new HttpRequestValidationException("Exception while creating Security Context");
+            int nUserid = (int)securityContext.nUserID;
+            var brandDAL = new BrandDAL();
+            brandDAL.Delete(brand, nUserid);
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
 
 
         }

@@ -12,9 +12,10 @@ namespace DeploymentTool.Controller
 {
     public class TokenController : ApiController
     {
-
-        [HttpPost]
         [AllowAnonymous]
+        [HttpPost]        
+        [Route("api/Token/Get")]
+        
         public HttpResponseMessage Get(UserForAuthentication request)
         {
             var user = CheckUser(request.UserName, request.Password);
@@ -22,7 +23,7 @@ namespace DeploymentTool.Controller
             if (user.nUserID != -1)
             {
 
-                user.auth = JwtManager.GenerateToken(request.UserName);
+                user.auth = JwtManager.GenerateToken(user);
                 return Request.CreateResponse(HttpStatusCode.OK, user);
             }
             return Request.CreateResponse(HttpStatusCode.Unauthorized);
@@ -33,7 +34,7 @@ namespace DeploymentTool.Controller
             User objUser = new User();
             objUser.userName = username;
             objUser.password = password;
-            DBHelper.login(ref objUser);
+            DBHelper.login(ref objUser);          
             return objUser;           
 
         }
