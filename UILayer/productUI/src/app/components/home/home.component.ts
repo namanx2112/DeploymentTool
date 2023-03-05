@@ -9,18 +9,18 @@ import { HomeService } from 'src/app/services/home.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  brands: BrandModel[];
+  viewName:string;
   constructor(private homeService: HomeService, private brandService: BrandServiceService) {
-    this.getBrands();
+    this.viewName = "Dashboard";
   }
 
   getValue() {
     this.homeService.loginGet().subscribe((res: string) => {
       alert(res);
     });
-  }
+  }  
 
-  getBrands() {
-    this.brands = this.brandService.GetAllBrands();
+  switchView(vName: string){
+    this.viewName = vName;
   }
 }

@@ -12,12 +12,14 @@ import { Fields, FieldType, HomeTab } from 'src/app/interfaces/home-tab';
 export class ControlsComponent {
   @Input() fields: Fields[];
   @Input() controlValues: Dictionary<string>;
+  @Input() SubmitLabel: string;
   @Output() onSubmit = new EventEmitter<FormGroup>();
   formGroup = new FormGroup({});
   constructor() {
   }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    this.formGroup = new FormGroup({});
     for (const formField of this.fields) {
       if (typeof this.controlValues[formField.fieldUniqeName] == 'undefined')
         this.controlValues[formField.fieldUniqeName] = formField.defaultVal;

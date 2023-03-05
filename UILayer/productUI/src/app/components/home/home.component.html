@@ -22,13 +22,13 @@
                         transform="translate(-29.82 -12.9)"></path>
                 </svg></div>
             <div class="toolBar floatLeft">
-                <span class="action"><mat-icon>find_in_page</mat-icon></span>
-                <span class="action"><mat-icon>insert_chart</mat-icon></span>
-                <span class="action"><mat-icon>notifications_none</mat-icon></span>
-                <span class="action"><mat-icon>email</mat-icon></span>
-                <span class="action"><mat-icon>list</mat-icon></span>
-                <span class="action"><mat-icon>find_in_page</mat-icon></span>
-                <span class="action"><mat-icon>settings</mat-icon></span>                
+                <span class="action" title="Dashboard" (click)="switchView('Dashboard')"><mat-icon>home</mat-icon></span>
+                <span class="action" title="Configurations" (click)="switchView('Configurations')"><mat-icon>insert_chart</mat-icon></span>
+                <span class="action" title="Notifications" (click)="switchView('Notifications')"><mat-icon>notifications_none</mat-icon></span>
+                <span class="action" title="Mails" (click)="switchView('Mails')"><mat-icon>email</mat-icon></span>
+                <span class="action" title="Find" (click)="switchView('Find')"><mat-icon>find_in_page</mat-icon></span>                                                
+                <span class="action" title="List" (click)="switchView('List')"><mat-icon>list</mat-icon></span>                
+                <span class="action" title="Settings" (click)="switchView('Settings')"><mat-icon>settings</mat-icon></span>
             </div>
         </div>
         <div class="right floatLeft">
@@ -43,34 +43,9 @@
                 </div>
             </div>
             <div class="mainBody floatLeft">
-                <div class="leftPart floatLeft">
-                    <div class="chips">
-                        <div class="chipsHeader">Brands</div>
-                        <div class="chipsBody">
-                            <span class="brands" *ngFor="let brand of brands">
-                                <img src="{{brand.tIconURL}}"/>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="chips">
-                        <div class="chipsHeader">Priorities</div>
-                        <div class="chipsBody whiteBG"></div>
-                    </div>
-                    <div class="chips">
-                        <div class="chipsHeader">Goals</div>
-                        <div class="chipsBody whiteBG"></div>
-                    </div>
-                </div>
-                <div class="rightPart floatLeft">
-                    <div class="chips">
-                        <div class="chipsHeader">Notifications</div>
-                        <div class="chipsBody"></div>
-                    </div>
-                    <div class="chips">
-                        <div class="chipsHeader">Pending Requests</div>
-                        <div class="chipsBody"></div>
-                    </div>
-                </div>
+                <app-home-dashboard *ngIf="viewName=='Dashboard'"></app-home-dashboard>
+                <app-admin-config *ngIf="viewName=='Configurations'"></app-admin-config>
+                <app-not-implemented *ngIf="viewName!='Dashboard' && viewName!='Configurations'"></app-not-implemented>
             </div>
         </div>
     </div>

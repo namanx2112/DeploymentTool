@@ -13,9 +13,10 @@ import { BrandModel } from 'src/app/interfaces/models';
 export class NewEditObjectComponent {
   @Input() curTab: HomeTab;
   @Output() returnBack= new EventEmitter<any>()
+  SubmitLabel: string;
   curControlVals: Dictionary<string> = {};
   constructor( private brandService: BrandServiceService){
-    
+    this.SubmitLabel = "Submit";
   }
 
   onSubmit(controlVals: FormGroup){

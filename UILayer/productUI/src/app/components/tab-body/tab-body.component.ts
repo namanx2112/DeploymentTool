@@ -13,9 +13,11 @@ export class TabBodyComponent {
   @Input() curTab: HomeTab;
   secondPart: string;
   curControlVals: Dictionary<string> = {};
+  SubmitLabel: string;
 
   constructor(private route:ActivatedRoute, public router: Router){
     this.secondPart = "table";
+    this.SubmitLabel = "Search";
   }
 
   OpenNew(){
