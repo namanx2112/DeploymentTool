@@ -72,13 +72,6 @@ namespace DeploymentTool.Controller
         }
 
 
-
-
-
-
-
-
-
         [Authorize]
         [HttpPost]
         [Route("api/Brand/update")]

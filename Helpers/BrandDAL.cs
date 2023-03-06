@@ -77,11 +77,7 @@ namespace DeploymentTool.Helpers
                 throw ex;
             }
             return brandId;
-        }
-
-
-
-        
+        }        
         public List<Brand> GetBrands(Brand inputbrand, int nUserID)
         {
             SqlParameter[] parameters = null;

@@ -87,6 +87,7 @@ namespace DeploymentTool.Controller
             };
 
         }
+
         [Authorize]
         [HttpPost]
         [Route("api/Franchise/CreateFranchise")]
