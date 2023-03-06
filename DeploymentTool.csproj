@@ -906,7 +906,9 @@
     <Compile Include="AppStart\globalExceptionHandler.cs" />
     <Compile Include="AppStart\RouteConfig.cs" />
     <Compile Include="Auth\JwtManager.cs" />
+    <Compile Include="Controller\AttachmentController.cs" />
     <Compile Include="Controller\BrandController.cs" />
+    <Compile Include="Controller\FranchiseController.cs" />
     <Compile Include="Controller\StoreScreenConfigController.cs" />
     <Compile Include="Controller\TableController.cs" />
     <Compile Include="Controller\TokenController.cs" />
@@ -918,11 +920,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AttachmentDAL.cs" />
     <Compile Include="Helpers\BrandDAL.cs" />
     <Compile Include="Helpers\DBHelper.cs" />
+    <Compile Include="Helpers\FranchiseDAL.cs" />
+    <Compile Include="Helpers\StoreDAL.cs" />
+    <Compile Include="Model\Attachment.cs" />
     <Compile Include="Model\Brand.cs" />
+    <Compile Include="Model\Franchise.cs" />
     <Compile Include="Model\Params.cs" />
     <Compile Include="Model\SearchField.cs" />
+    <Compile Include="Model\Store.cs" />
     <Compile Include="Model\StoreFieldConfig.cs" />
     <Compile Include="Model\StoreScreenConfiguration.cs" />
     <Compile Include="Model\TableFields.cs" />
