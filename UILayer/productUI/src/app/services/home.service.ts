@@ -134,9 +134,10 @@ export class HomeService {
         tab_header: "Brands search",
         tab_type: TabType.Brands,
         tab_unique_name: "",
-        search_fields: [{
+        search_fields: [
+          {
           field_name: "Brands Name",
-          fieldUniqeName: "tBrandsName",
+          fieldUniqeName: "tBrandName",
           defaultVal: "",
           readOnly: false,
           invalid: false,
@@ -157,7 +158,7 @@ export class HomeService {
             field_placeholder: "Enter Brands Id",
             validator: [],
             mandatory: false,
-            hidden: false
+            hidden: true
           },
           {
             field_name: "Brands Name",
@@ -263,7 +264,7 @@ export class HomeService {
           {
             field_name: "Brands Attachment Id",
             fieldUniqeName: "nBrandLogoAttachmentID",
-            defaultVal: "",
+            defaultVal: "0",
             readOnly: false,
             invalid: false,
             field_type: FieldType.number,

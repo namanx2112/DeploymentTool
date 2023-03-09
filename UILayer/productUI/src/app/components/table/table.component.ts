@@ -1,10 +1,16 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
-import { HomeTab } from 'src/app/interfaces/home-tab';
+import { MatRow, MatTableDataSource } from '@angular/material/table';
+import { HomeTab, TabType } from 'src/app/interfaces/home-tab';
+import { BrandModel } from 'src/app/interfaces/models';
+import { BrandServiceService } from 'src/app/services/brand-service.service';
 
 
+export interface TableColumnDef {
+  columnDef: string,
+  header: string
+}
 export interface UserData {
   id: string;
   name: string;
@@ -52,22 +58,58 @@ const NAMES: string[] = [
 })
 
 export class TableComponent {
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @Input() curTab: HomeTab;
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
-  dataSource: MatTableDataSource<UserData>;
+  @Input() searchFields: any;
+  @Output() rowClicked = new EventEmitter<MatRow>();
+  displayedColumns: string[] = [];
+  columns: TableColumnDef[] = [];
+  dataSource: MatTableDataSource<any>;
+  clickedRows = new Set<any>();
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
-    // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+  constructor(private brandService: BrandServiceService) {
   }
 
-  ngAfterViewInit() {
+  rowClick(row: MatRow){
+      this.rowClicked.emit(row);
+  }
+
+  getTable() {
+    if (typeof this.curTab != 'undefined') {
+      this.displayedColumns= [];
+      this.columns = [];
+      if (this.curTab.tab_type == TabType.Brands) {
+        this.getBrands(this.searchFields);
+      }
+      else if (this.curTab.tab_type == TabType.Vendor) {
+
+      }
+    }
+  }
+
+  getBrands(searchFields: any) {
+    this.brandService.GetBrands(searchFields).subscribe((resp: BrandModel[]) => {
+      this.dataSource = new MatTableDataSource(resp);
+      for (var indx in this.curTab.fields) {
+        this.displayedColumns.push(this.curTab.fields[indx].fieldUniqeName);
+        this.columns.push({
+          columnDef: this.curTab.fields[indx].fieldUniqeName,
+          header: this.curTab.fields[indx].field_name
+        });
+      }
+      // Assign the data to the data source for the table to render
+
+      //
+    });
+  }
+
+  ngOnChanges() {
+    this.getTable();
+  }
+  ngAfterViewInit2() {
+    this.getTable();
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
@@ -96,5 +138,5 @@ function createNewUser(id: number): UserData {
     progress: Math.round(Math.random() * 100).toString(),
     fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
   };
-  
+
 }

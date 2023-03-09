@@ -17,6 +17,14 @@ export class BrandServiceService {
     return this.http.post<BrandModel>(this.configUrl + "Brand/CreateBrand", request, { headers: this.authService.getHttpHeaders() });
   }
 
+  UpdateBrand(request: any) {
+    return this.http.post<BrandModel>(this.configUrl + "Brand/Update", request, { headers: this.authService.getHttpHeaders() });
+  }
+
+  GetBrands(request: BrandModel | null){
+    return this.http.post<BrandModel[]>(this.configUrl + "Brand/GetBrands", request, { headers: this.authService.getHttpHeaders() });
+  }
+
   GetAllBrands(): BrandModel[] {
     let brands: BrandModel[] = [
       {

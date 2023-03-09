@@ -12,17 +12,37 @@ import { BrandModel } from 'src/app/interfaces/models';
 })
 export class NewEditObjectComponent {
   @Input() curTab: HomeTab;
-  @Output() returnBack= new EventEmitter<any>()
+  @Output() returnBack = new EventEmitter<any>()
+  private _controlValues: Dictionary<string>;
+  @Input() set controlValues(value: Dictionary<string>) {
+    this._controlValues = value;
+    this.valueChanged();
+  };
+  get controlValues(): Dictionary<string> {
+    return this._controlValues;
+  }
   SubmitLabel: string;
-  curControlVals: Dictionary<string> = {};
-  constructor( private brandService: BrandServiceService){
+  constructor(private brandService: BrandServiceService) {
     this.SubmitLabel = "Submit";
+    this.controlValues = {};
   }
 
-  onSubmit(controlVals: FormGroup){
-    this.brandService.CreateBrand(controlVals.value).subscribe((resp: BrandModel)=>{
+  valueChanged() {
+
+  }
+
+  onSubmit(controlVals: FormGroup) {
+    if (controlVals.value["aBrandId"] && parseInt(controlVals.value["aBrandId"]) > 0) {
+      this.brandService.UpdateBrand(controlVals.value).subscribe((resp: BrandModel) => {
         console.log(resp);
         this.returnBack.emit(resp);
-    })
+      });
+    }
+    else {
+      this.brandService.CreateBrand(controlVals.value).subscribe((resp: BrandModel) => {
+        console.log(resp);
+        this.returnBack.emit(resp);
+      });
+    }
   }
 }

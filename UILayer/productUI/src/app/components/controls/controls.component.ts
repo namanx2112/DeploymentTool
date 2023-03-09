@@ -10,8 +10,15 @@ import { Fields, FieldType, HomeTab } from 'src/app/interfaces/home-tab';
   styleUrls: ['./controls.component.css']
 })
 export class ControlsComponent {
+  private _controlValues: Dictionary<string>;
   @Input() fields: Fields[];
-  @Input() controlValues: Dictionary<string>;
+  @Input() set controlValues(value: Dictionary<string>) {
+    this._controlValues = value;
+    this.valueChanged();
+  };
+  get controlValues(): Dictionary<string> {
+    return this._controlValues;
+  }
   @Input() SubmitLabel: string;
   @Output() onSubmit = new EventEmitter<FormGroup>();
   formGroup = new FormGroup({});
@@ -19,10 +26,14 @@ export class ControlsComponent {
   }
 
   ngOnChanges(): void {
+    this.valueChanged();
+  }
+
+  valueChanged() {
     this.formGroup = new FormGroup({});
     for (const formField of this.fields) {
-      if (typeof this.controlValues[formField.fieldUniqeName] == 'undefined')
-        this.controlValues[formField.fieldUniqeName] = formField.defaultVal;
+      if (typeof this._controlValues[formField.fieldUniqeName] == 'undefined')
+        this._controlValues[formField.fieldUniqeName] = formField.defaultVal;
       this.formGroup.addControl(formField.fieldUniqeName, new FormControl(
         "", formField.validator));
     }
@@ -52,8 +63,8 @@ export class ControlsComponent {
   }
 
   onSubmitClick(): void {
-   // if (this.formGroup.valid) {
-      this.onSubmit.emit(this.formGroup);
-   // }
+    // if (this.formGroup.valid) {
+    this.onSubmit.emit(this.formGroup);
+    // }
   }
 }
