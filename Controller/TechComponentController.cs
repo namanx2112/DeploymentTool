@@ -88,5 +88,28 @@ namespace DeploymentTool.Controller
                 };
             }
         }
+
+        // DELETE api/<controller>/5
+
+        [Authorize]
+        [HttpPost]
+        [Route("api/TechComponent/delete")]
+        public HttpResponseMessage Delete(TechComponent techcomponent)
+        {
+            var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
+            if (!ModelState.IsValid)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+            if (securityContext == null)
+                throw new HttpRequestValidationException("Exception while creating Security Context");
+            int nUserid = (int)securityContext.nUserID;
+            var techcomponentDAL = new TechComponentDAL();
+            techcomponentDAL.Delete(techcomponent, nUserid);
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
+
+
+        }
     }
 }

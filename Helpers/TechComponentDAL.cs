@@ -96,5 +96,14 @@ namespace DeploymentTool.Helpers
 
             DBHelper.ExecuteNonQuery("sprocTechComponentUpdate", parameters);
         }
+        public void Delete(TechComponent techcomponent, int userId)
+        {
+            var parameters = new SqlParameter[]
+            {
+                new SqlParameter("@nTechComponentID", techcomponent.aTechComponentId),
+                new SqlParameter("@nUserID", userId)
+            };
+            DBHelper.ExecuteNonQuery("sprocTechComponentDelete", parameters);
+        }
     }
 }
