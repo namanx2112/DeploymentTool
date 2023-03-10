@@ -20,6 +20,7 @@ export class HomeTabComponent {
           search_fields: [{
             field_name: "User Name",
             fieldUniqeName: "ABCD",
+            icon: "search",
             defaultVal: "",
             readOnly: false,
             invalid: false,

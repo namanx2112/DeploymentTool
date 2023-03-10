@@ -50,20 +50,16 @@ namespace DeploymentTool.Controller
         public HttpResponseMessage CreateBrand([FromBody] Brand brand)
         {
             var securityContext = (User)HttpContext.Current.Items["SecurityContext"];
-            if (!ModelState.IsValid)
-            {
-                return new HttpResponseMessage(HttpStatusCode.BadRequest);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            //}
             if (securityContext == null)
-                throw new HttpRequestValidationException("Exception while creating Security Context"); if (!ModelState.IsValid)
-            {
-                return new HttpResponseMessage(HttpStatusCode.BadRequest);
-            }
+                throw new HttpRequestValidationException("Exception while creating Security Context"); 
 
             int nuserid = 1;
             var brandDAL = new BrandDAL();
-            int brandId = brandDAL.CreateBrand(brand, securityContext.nUserID);
-            brand.aBrandId = brandId;
+            brandDAL.Update(brand);
 
             return new HttpResponseMessage(HttpStatusCode.OK)
             {

@@ -20,6 +20,12 @@ import { TableComponent } from './components/table/table.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NewEditObjectComponent } from './components/new-edit-object/new-edit-object.component';
+import { HomeDashboardComponent } from './components/home-dashboard/home-dashboard.component';
+import { AdminConfigComponent } from './components/admin-config/admin-config.component';
+import { NotImplementedComponent } from './components/not-implemented/not-implemented.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { AdminDashboardShortcutsComponent } from './components/admin-dashboard-shortcuts/admin-dashboard-shortcuts.component';
+import { ManageDropdownsComponent } from './components/manage-dropdowns/manage-dropdowns.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,12 @@ import { NewEditObjectComponent } from './components/new-edit-object/new-edit-ob
     TabBodyComponent,
     ControlsComponent,
     TableComponent,
-    NewEditObjectComponent
+    NewEditObjectComponent,
+    HomeDashboardComponent,
+    AdminConfigComponent,
+    NotImplementedComponent,
+    AdminDashboardShortcutsComponent,
+    ManageDropdownsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +57,8 @@ import { NewEditObjectComponent } from './components/new-edit-object/new-edit-ob
     MatButtonModule,
     MatIconModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
