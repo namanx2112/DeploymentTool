@@ -6,3 +6,7 @@
 /.vs/DeploymentTool/v17/.wsuo
 /.vs/Repos/v17
 /.vs/DeploymentTool/FileContentIndex
+/App_Start
+/Content
+/UILayer/productUI/src/app/components
+/Views
