@@ -11,6 +11,5 @@ export interface BrandModel {
     nCreatedBy: number,
     nUpdateBy: number,
     dtCreatedOn: Date,
-    dtUpdatedOn: Date,
-    tIconURL: string
+    dtUpdatedOn: Date
 }

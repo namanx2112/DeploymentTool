@@ -33,9 +33,9 @@ namespace DeploymentTool.Helpers
                 new SqlParameter("@tBrandCategory", brand.tBrandCategory),
                 new SqlParameter("@tBrandContact", brand.tBrandContact),
                 new SqlParameter("@nBrandLogoAttachmentID", brand.nBrandLogoAttachmentID),
-                new SqlParameter("@nUserId", brand.nUpdateBy),
-                //new SqlParameter("@dtUpdatedOn", brand.dtUpdatedOn),
-                //new SqlParameter("@bDeleted", brand.bDeleted)
+                new SqlParameter("@nUpdateBy", brand.nUpdateBy),
+                new SqlParameter("@dtUpdatedOn", brand.dtUpdatedOn),
+                new SqlParameter("@bDeleted", brand.bDeleted)
             };
 
             DBHelper.ExecuteNonQuery("sprocBrandUpdate", parameters);

@@ -1,1 +1,5 @@
-<app-controls [fields]="curTab.fields" [controlValues]="controlValues" [SubmitLabel]="SubmitLabel" (onSubmit)="onSubmit($event)"></app-controls>
+<app-controls [fields]="curTab.fields" [controlValues]="curControlVals" (onSubmit)="onSubmit($event)"></app-controls>
+<button mat-fab extended color="warn" class="searchButton">
+    <mat-icon>search</mat-icon>
+    Search
+</button>
